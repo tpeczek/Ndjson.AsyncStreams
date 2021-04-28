@@ -29,7 +29,7 @@ namespace Ndjson.AsyncStreams.Net.Http
                 throw new ArgumentNullException(nameof(client));
             }
 
-            NdjsonAsyncEnumerableContent ndjsonAsyncEnumerableContent = NdjsonAsyncEnumerableContent.Create(values, options);
+            NdjsonAsyncEnumerableContent<T> ndjsonAsyncEnumerableContent = new NdjsonAsyncEnumerableContent<T>(values, options);
 
             return client.PostAsync(requestUri, ndjsonAsyncEnumerableContent, cancellationToken);
         }
@@ -50,7 +50,7 @@ namespace Ndjson.AsyncStreams.Net.Http
                 throw new ArgumentNullException(nameof(client));
             }
 
-            NdjsonAsyncEnumerableContent ndjsonAsyncEnumerableContent = NdjsonAsyncEnumerableContent.Create(values, options);
+            NdjsonAsyncEnumerableContent<T> ndjsonAsyncEnumerableContent = new NdjsonAsyncEnumerableContent<T>(values, options);
 
             return client.PostAsync(requestUri, ndjsonAsyncEnumerableContent, cancellationToken);
         }

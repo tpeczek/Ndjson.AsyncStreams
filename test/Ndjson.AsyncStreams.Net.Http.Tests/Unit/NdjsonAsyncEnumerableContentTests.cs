@@ -6,14 +6,14 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
 {
     public class NdjsonAsyncEnumerableContentTests
     {
-        private const string SERIALIZED_VALUES = "{\"id\":1,\"name\":\"Value 01\"}\n{\"id\":2,\"name\":\"Value 02\"}\n";
-
-        private class ValueType
+        private struct ValueType
         {
             public int Id { get; set; }
 
             public string Name { get; set; }
         }
+
+        private const string NDJSON = "{\"id\":1,\"name\":\"Value 01\"}\n{\"id\":2,\"name\":\"Value 02\"}\n";
 
         private async IAsyncEnumerable<ValueType> GetValuesAsync()
         {
@@ -27,21 +27,11 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         }
 
         [Fact]
-        public void Create_ValuesType_IsDeclaredType()
-        {
-            IAsyncEnumerable<ValueType> values = GetValuesAsync();
-
-            NdjsonAsyncEnumerableContent ndjsonAsyncEnumerableContent = NdjsonAsyncEnumerableContent.Create(values);
-
-            Assert.Equal(typeof(ValueType), ndjsonAsyncEnumerableContent.ValuesType);
-        }
-
-        [Fact]
         public void Create_Values_IsProvidedValues()
         {
             IAsyncEnumerable<ValueType> values = GetValuesAsync();
 
-            NdjsonAsyncEnumerableContent ndjsonAsyncEnumerableContent = NdjsonAsyncEnumerableContent.Create(values);
+            NdjsonAsyncEnumerableContent<ValueType> ndjsonAsyncEnumerableContent = new NdjsonAsyncEnumerableContent<ValueType>(values);
 
             Assert.Same(values, ndjsonAsyncEnumerableContent.Values);
         }
@@ -51,7 +41,7 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         {
             IAsyncEnumerable<ValueType> values = GetValuesAsync();
 
-            NdjsonAsyncEnumerableContent ndjsonAsyncEnumerableContent = NdjsonAsyncEnumerableContent.Create(values);
+            NdjsonAsyncEnumerableContent<ValueType> ndjsonAsyncEnumerableContent = new NdjsonAsyncEnumerableContent<ValueType>(values);
 
             Assert.Equal("application/x-ndjson", ndjsonAsyncEnumerableContent.Headers.ContentType.MediaType);
         }
@@ -61,7 +51,7 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         {
             IAsyncEnumerable<ValueType> values = GetValuesAsync();
 
-            NdjsonAsyncEnumerableContent ndjsonAsyncEnumerableContent = NdjsonAsyncEnumerableContent.Create(values);
+            NdjsonAsyncEnumerableContent<ValueType> ndjsonAsyncEnumerableContent = new NdjsonAsyncEnumerableContent<ValueType>(values);
 
             Assert.Equal("utf-8", ndjsonAsyncEnumerableContent.Headers.ContentType.CharSet);
         }
@@ -71,9 +61,9 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         {
             IAsyncEnumerable<ValueType> values = GetValuesAsync();
 
-            NdjsonAsyncEnumerableContent ndjsonAsyncEnumerableContent = NdjsonAsyncEnumerableContent.Create(values);
+            NdjsonAsyncEnumerableContent<ValueType> ndjsonAsyncEnumerableContent = new NdjsonAsyncEnumerableContent<ValueType>(values);
 
-            Assert.Equal(SERIALIZED_VALUES, await ndjsonAsyncEnumerableContent.ReadAsStringAsync());
+            Assert.Equal(NDJSON, await ndjsonAsyncEnumerableContent.ReadAsStringAsync());
         }
     }
 }
