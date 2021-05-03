@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace Ndjson.AsyncStreams.Net.Http
 {
     /// <summary>
-    /// Provides HTTP content based on NDJSON and <see cref="IAsyncEnumerable{T}"/>.
+    /// Provides <see cref="HttpContent" /> based on NDJSON and <see cref="IAsyncEnumerable{T}"/>.
     /// </summary>
     /// <typeparam name="T">The type of the values in async stream to be serialized.</typeparam>
     public class NdjsonAsyncEnumerableContent<T> : HttpContent
@@ -42,7 +42,6 @@ namespace Ndjson.AsyncStreams.Net.Http
         /// </summary>
         /// <param name="values">The async stream of values to be serialized.</param>
         /// <param name="options">The options to control the behavior during serialization.</param>
-        /// <returns>A <see cref="NdjsonAsyncEnumerableContent{T}"/> instance.</returns>
         public NdjsonAsyncEnumerableContent(IAsyncEnumerable<T> values, JsonSerializerOptions? options = null)
         {
             Values = values ?? throw new ArgumentNullException(nameof(values));

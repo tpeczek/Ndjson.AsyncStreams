@@ -7,6 +7,7 @@ Ndjson.AsyncStreams is a solution for working with asynchronous streaming data s
 There are blog posts available which describe implementation details:
 
 - [Fetch API, Streams API, NDJSON, and ASP.NET Core MVC](https://www.tpeczek.com/2019/04/fetch-api-streams-api-ndjson-and-aspnet.html)
+- [Consuming JSON Objects Stream (NDJSON) With HttpClient](https://www.tpeczek.com/2020/10/consuming-json-objects-stream-ndjson.html)
 
 ## Donating
 

@@ -27,7 +27,7 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         }
 
         [Fact]
-        public void Create_Values_IsProvidedValues()
+        public void Create_ValuesIsProvidedValues()
         {
             IAsyncEnumerable<ValueType> values = GetValuesAsync();
 
@@ -37,7 +37,7 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         }
 
         [Fact]
-        public void Create_MediaType_IsNdjson()
+        public void Create_MediaTypeIsNdjson()
         {
             IAsyncEnumerable<ValueType> values = GetValuesAsync();
 
@@ -47,7 +47,7 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         }
 
         [Fact]
-        public void Create_CharSet_IsUtf8()
+        public void Create_CharSetIsUtf8()
         {
             IAsyncEnumerable<ValueType> values = GetValuesAsync();
 

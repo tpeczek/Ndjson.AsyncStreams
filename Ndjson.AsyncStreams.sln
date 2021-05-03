@@ -9,7 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0889D597-8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ndjson.AsyncStreams.Net.Http", "src\Ndjson.AsyncStreams.Net.Http\Ndjson.AsyncStreams.Net.Http.csproj", "{BAEC5233-922D-4469-82E6-FD6869370EB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ndjson.AsyncStreams.Net.Http.Tests", "test\Ndjson.AsyncStreams.Net.Http.Tests\Ndjson.AsyncStreams.Net.Http.Tests.csproj", "{573345CD-6F77-4937-9A51-246F5B24E143}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ndjson.AsyncStreams.Net.Http.Tests", "test\Ndjson.AsyncStreams.Net.Http.Tests\Ndjson.AsyncStreams.Net.Http.Tests.csproj", "{573345CD-6F77-4937-9A51-246F5B24E143}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ndjson.AsyncStreams.AspNetCore.Mvc", "src\Ndjson.AsyncStreams.AspNetCore.Mvc\Ndjson.AsyncStreams.AspNetCore.Mvc.csproj", "{2C172D25-FDA1-4DDF-98F7-568A16443230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ndjson.AsyncStreams.AspNetCore.Mvc.Tests", "test\Ndjson.AsyncStreams.AspNetCore.Mvc.Tests\Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.csproj", "{60ECE376-F1BF-4CCD-877C-BAB401BFB9D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,14 @@ Global
 		{573345CD-6F77-4937-9A51-246F5B24E143}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{573345CD-6F77-4937-9A51-246F5B24E143}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{573345CD-6F77-4937-9A51-246F5B24E143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C172D25-FDA1-4DDF-98F7-568A16443230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C172D25-FDA1-4DDF-98F7-568A16443230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C172D25-FDA1-4DDF-98F7-568A16443230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C172D25-FDA1-4DDF-98F7-568A16443230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60ECE376-F1BF-4CCD-877C-BAB401BFB9D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60ECE376-F1BF-4CCD-877C-BAB401BFB9D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60ECE376-F1BF-4CCD-877C-BAB401BFB9D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60ECE376-F1BF-4CCD-877C-BAB401BFB9D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BAEC5233-922D-4469-82E6-FD6869370EB8} = {55EFE6F9-33D5-4153-B1DE-5672827DEB08}
 		{573345CD-6F77-4937-9A51-246F5B24E143} = {0889D597-88B4-432C-8C30-DE10CAD53834}
+		{2C172D25-FDA1-4DDF-98F7-568A16443230} = {55EFE6F9-33D5-4153-B1DE-5672827DEB08}
+		{60ECE376-F1BF-4CCD-877C-BAB401BFB9D4} = {0889D597-88B4-432C-8C30-DE10CAD53834}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C3DC840-115D-4634-9527-340F8269AF24}
