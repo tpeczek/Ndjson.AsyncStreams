@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Text.Encodings.Web;
@@ -17,7 +18,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 
         public NdjsonWriter(Stream writeStream, JsonOptions jsonOptions)
         {
-            _writeStream = writeStream;
+            _writeStream = writeStream ?? throw new ArgumentNullException(nameof(Stream));
 
             _jsonSerializerOptions = jsonOptions.JsonSerializerOptions;
             if (_jsonSerializerOptions.Encoder is null)

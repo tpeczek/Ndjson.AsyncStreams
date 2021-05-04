@@ -17,7 +17,7 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         }
 
         private const string NDJSON = "{\"id\":1,\"name\":\"Value 01\"}\n{\"id\":2,\"name\":\"Value 02\"}\n";
-        private static readonly List<ValueType> VALUES = new List<ValueType>
+        private static readonly List<ValueType> VALUES = new ()
         {
             new ValueType { Id = 1, Name = "Value 01" },
             new ValueType { Id = 2, Name = "Value 02" }
