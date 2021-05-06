@@ -1,6 +1,12 @@
 # Ndjson.AsyncStreams
+[![NuGet Version](https://img.shields.io/nuget/v/Ndjson.AsyncStreams.Net.Http?label=Ndjson.AsyncStreams.Net.Http&logo=nuget)(https://www.nuget.org/packages/Ndjson.AsyncStreams.Net.Http/)
+[![NuGet Version](https://img.shields.io/nuget/v/Ndjson.AsyncStreams.AspNetCore.Mvc?label=Ndjson.AsyncStreams.AspNetCore.Mvc.Http&logo=nuget)(https://www.nuget.org/packages/Ndjson.AsyncStreams.AspNetCore.Mvc/)
 
 Ndjson.AsyncStreams is a solution for working with asynchronous streaming data sources over HTTP using NDJSON (Newline Delimited JSON).
+
+## Demos
+
+There is a demo project available [here](https://github.com/tpeczek/Demo.Ndjson.AsyncStreams).
 
 ## Additional Resources
 
