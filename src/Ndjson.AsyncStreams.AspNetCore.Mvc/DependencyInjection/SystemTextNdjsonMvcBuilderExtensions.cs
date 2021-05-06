@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Ndjson.AsyncStreams.AspNetCore.Mvc;
 using Ndjson.AsyncStreams.AspNetCore.Mvc.Internals;
@@ -8,7 +10,7 @@ namespace Microsoft.Extensions.DependencyInjection
     /// <summary>
     /// Extensions methods for configuring MVC via an <see cref="IMvcBuilder"/>.
     /// </summary>
-    public static class NdjsonMvcBuilderExtensions
+    public static class SystemTextNdjsonMvcBuilderExtensions
     {
         /// <summary>
         /// Configures NDJSON support for async streams.
@@ -22,7 +24,8 @@ namespace Microsoft.Extensions.DependencyInjection
                 throw new ArgumentNullException(nameof(builder));
             }
 
-            builder.Services.TryAddSingleton<INdjsonWriterFactory, NdjsonWriterFactory>();
+            builder.Services.TryAddSingleton<INdjsonWriterFactory, SystemTextNdjsonWriterFactory>();
+            builder.Services.AddSingleton<IConfigureOptions<MvcOptions>, SystemTextNdjsonMvcOptionsSetup>();
 
             return builder;
         }

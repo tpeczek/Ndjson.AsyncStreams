@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 {
-    internal class NdjsonWriterFactory : INdjsonWriterFactory
+    internal class SystemTextNdjsonWriterFactory : INdjsonWriterFactory
     {
         private static readonly string CONTENT_TYPE = new MediaTypeHeaderValue("application/x-ndjson")
         {
@@ -18,7 +18,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 
         private readonly JsonOptions _options;
 
-        public NdjsonWriterFactory(IOptions<JsonOptions> options)
+        public SystemTextNdjsonWriterFactory(IOptions<JsonOptions> options)
         {
             _options = options?.Value ?? throw new ArgumentNullException(nameof(options));
         }
@@ -46,7 +46,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 
             DisableResponseBuffering(context.HttpContext);
 
-            return new NdjsonWriter<T>(response.Body, _options);
+            return new SystemTextNdjsonWriter<T>(response.Body, _options);
         }
 
         private static void DisableResponseBuffering(HttpContext context)

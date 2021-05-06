@@ -35,13 +35,13 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit
 
         public static IEnumerable<object[]> NdjsonWriterFactories => new List<object[]>
         {
-            new object[] { PrepareNdjsonWriterFactory() },
+            new object[] { PrepareSystemTextNdjsonWriterFactory() },
             new object[] { PrepareNewtonsoftNdjsonWriterFactory() }
         };
 
-        private static INdjsonWriterFactory PrepareNdjsonWriterFactory()
+        private static INdjsonWriterFactory PrepareSystemTextNdjsonWriterFactory()
         {
-            return new NdjsonWriterFactory(Options.Create(new JsonOptions()));
+            return new SystemTextNdjsonWriterFactory(Options.Create(new JsonOptions()));
         }
 
         private static INdjsonWriterFactory PrepareNewtonsoftNdjsonWriterFactory()

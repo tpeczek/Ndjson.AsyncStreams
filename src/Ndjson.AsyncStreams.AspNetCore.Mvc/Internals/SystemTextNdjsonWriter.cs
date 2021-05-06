@@ -9,14 +9,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 {
-    internal class NdjsonWriter<T> : INdjsonWriter<T>
+    internal class SystemTextNdjsonWriter<T> : INdjsonWriter<T>
     {
         private static readonly byte[] _newlineDelimiter = Encoding.UTF8.GetBytes("\n");
 
         private readonly Stream _writeStream;
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 
-        public NdjsonWriter(Stream writeStream, JsonOptions jsonOptions)
+        public SystemTextNdjsonWriter(Stream writeStream, JsonOptions jsonOptions)
         {
             _writeStream = writeStream ?? throw new ArgumentNullException(nameof(Stream));
 

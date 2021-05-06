@@ -1,5 +1,7 @@
 ﻿using System;
+using Microsoft.Extensions.Options;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Mvc;
 using Ndjson.AsyncStreams.AspNetCore.Mvc;
 using Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Internals;
 
@@ -23,6 +25,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
 
             builder.Services.TryAddSingleton<INdjsonWriterFactory, NewtonsoftNdjsonWriterFactory>();
+            builder.Services.AddSingleton<IConfigureOptions<MvcOptions>, NewtonsoftNdjsonMvcOptionsSetup>();
 
             return builder;
         }

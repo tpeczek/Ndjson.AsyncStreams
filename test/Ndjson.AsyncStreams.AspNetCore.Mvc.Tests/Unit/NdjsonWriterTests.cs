@@ -27,13 +27,13 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit
 
         public static IEnumerable<object[]> NdjsonWriterPreparers => new List<object[]>
         {
-            new object[] { (PrepareINdjsonWriter)PrepareNdjsonWriter },
+            new object[] { (PrepareINdjsonWriter)PrepareSystemTextNdjsonWriter },
             new object[] { (PrepareINdjsonWriter)PrepareNewtonsoftNdjsonWriter }
         };
 
-        private static INdjsonWriter<ValueType> PrepareNdjsonWriter(Stream writeStream)
+        private static INdjsonWriter<ValueType> PrepareSystemTextNdjsonWriter(Stream writeStream)
         {
-            return new NdjsonWriter<ValueType>(writeStream, new JsonOptions());
+            return new SystemTextNdjsonWriter<ValueType>(writeStream, new JsonOptions());
         }
 
         private static INdjsonWriter<ValueType> PrepareNewtonsoftNdjsonWriter(Stream writeStream)
