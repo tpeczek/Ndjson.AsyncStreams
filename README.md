@@ -14,6 +14,8 @@ There are blog posts available which describe implementation details:
 
 - [Fetch API, Streams API, NDJSON, and ASP.NET Core MVC](https://www.tpeczek.com/2019/04/fetch-api-streams-api-ndjson-and-aspnet.html)
 - [Consuming JSON Objects Stream (NDJSON) With HttpClient](https://www.tpeczek.com/2020/10/consuming-json-objects-stream-ndjson.html)
+- [Streaming JSON Objects (NDJSON) With HttpClient](https://www.tpeczek.com/2021/05/streaming-json-objects-ndjson-with.html)
+- [Receiving JSON Objects Stream (NDJSON) in ASP.NET Core MVC](https://www.tpeczek.com/2021/05/receiving-json-objects-stream-ndjson-in.html)
 
 ## Donating
 
