@@ -4,6 +4,10 @@
 
 Ndjson.AsyncStreams is a solution for working with asynchronous streaming data sources over HTTP using NDJSON (Newline Delimited JSON).
 
+## Documentation
+
+The documentation is available [here](https://tpeczek.github.io/Ndjson.AsyncStreams/).
+
 ## Demos
 
 There is a demo project available [here](https://github.com/tpeczek/Demo.Ndjson.AsyncStreams).
