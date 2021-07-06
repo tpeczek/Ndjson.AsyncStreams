@@ -1,0 +1,326 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/tpecz/GitHub/Ndjson.AsyncStreams/docs/Ndjson.AsyncStreams.DocFx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.html",
+          "hash": "tieyC7tu1wg75Mc9Y9aym7CFmjjl6Z669EAYRTj7S2g="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.html",
+          "hash": "bxpJxrr3XjSFe/5N6QRnr8aG3lYHyuC+Z2DFEpsKaII="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.html",
+          "hash": "NOooRaazYKYfQcss1EGdNyL3LYGqNeU1EUgzJ6/0icw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.html",
+          "hash": "I/M91bQ2/bxr6FccjLZ/paiPi5KFvmt7IXYs4IYxIOk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html",
+          "hash": "FBP+XmfkvQ7TjlOZKBlrjJSfYgMjr0xm4661+gqGvMM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html",
+          "hash": "L+PdjLKeQtMR4aO5xaNdfLGg5VZLQ1es4XySNAgI4Ro="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.html",
+          "hash": "aNU+nhn2bIFlIDz8aU5AG0IVDDfxwOaUiyL91h9NioQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter-1.html",
+          "hash": "jTn/Ju5xYm/4anbW5kn/7OEiLPqCMbNqAEfY8dX60vg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.html",
+          "hash": "rvQ7XUjUo3GXye+Id5X/rSxzohHNMYlokR/Jzl/1F7w="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html",
+          "hash": "CRFI/+QPAsvd6JcaV0u4Yg2SVBAg+Zw2dg48dYNfcrA="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html",
+          "hash": "QB0X6TSjAfa9BFAogPkcEhaxa0QIJmnqn2ENo3gvNdQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.html",
+          "hash": "9kjbYRGoSSQge9CU2yYHd15jUUSP695yV8z231nwR3Q="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.html",
+          "hash": "cXjj2vwEC/7q6djEuHhSMN6A4MD/seQADAXJQD05qII="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.html",
+          "hash": "7jnPj08C1Vsq+aYA2oIzOptx+XF0Jq5kWIwmFh9PikE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.html",
+          "hash": "k+OZN227M7+YW5Zf1HujKf3NY9VX1xy2gcIvqOdfs/c="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html",
+          "hash": "4AlSdoqxrN1xi11ml+sV8fv0t7clV9Aokmv4VqAWoLE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.Net.Http.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.Net.Http.html",
+          "hash": "dqxKkJu1WJSN7dadOlUDkduANtZ8UwLrpfPB9hoZSQg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "LcX7bn+A/5Oz8CyiKaO/afg1SeR8jnU5XNANm9vJm4I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "5ziqR90aDSacAROwZM9QV0Y0x8C4GxR/bZOHsmWJ8iM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/ico/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "resources/ico/favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/svg/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "resources/svg/logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "LRCjiN8q3ldlY7sONVxHPgkmsA4bBJbUzL816RN/Szc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 17,
+          "skipped_file_count": 17
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

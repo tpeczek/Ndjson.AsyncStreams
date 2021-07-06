@@ -1,0 +1,542 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Microsoft.Extensions.DependencyInjection
+  name: Microsoft.Extensions.DependencyInjection
+  href: api/Microsoft.Extensions.DependencyInjection.html
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+- uid: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions
+  name: NewtonsoftNdjsonMvcBuilderExtensions
+  href: api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.html
+  commentId: T:Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions
+  fullName: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions
+  nameWithType: NewtonsoftNdjsonMvcBuilderExtensions
+- uid: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.AddNewtonsoftNdjson(IMvcBuilder)
+  name: AddNewtonsoftNdjson(IMvcBuilder)
+  href: api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_NewtonsoftNdjsonMvcBuilderExtensions_AddNewtonsoftNdjson_IMvcBuilder_
+  commentId: M:Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.AddNewtonsoftNdjson(IMvcBuilder)
+  fullName: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.AddNewtonsoftNdjson(IMvcBuilder)
+  nameWithType: NewtonsoftNdjsonMvcBuilderExtensions.AddNewtonsoftNdjson(IMvcBuilder)
+- uid: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.AddNewtonsoftNdjson*
+  name: AddNewtonsoftNdjson
+  href: api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_NewtonsoftNdjsonMvcBuilderExtensions_AddNewtonsoftNdjson_
+  commentId: Overload:Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.AddNewtonsoftNdjson
+  isSpec: "True"
+  fullName: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.AddNewtonsoftNdjson
+  nameWithType: NewtonsoftNdjsonMvcBuilderExtensions.AddNewtonsoftNdjson
+- uid: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions
+  name: NewtonsoftNdjsonMvcCoreBuilderExtensions
+  href: api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.html
+  commentId: T:Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions
+  fullName: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions
+  nameWithType: NewtonsoftNdjsonMvcCoreBuilderExtensions
+- uid: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.AddNewtonsoftNdjson(IMvcCoreBuilder)
+  name: AddNewtonsoftNdjson(IMvcCoreBuilder)
+  href: api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_NewtonsoftNdjsonMvcCoreBuilderExtensions_AddNewtonsoftNdjson_IMvcCoreBuilder_
+  commentId: M:Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.AddNewtonsoftNdjson(IMvcCoreBuilder)
+  fullName: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.AddNewtonsoftNdjson(IMvcCoreBuilder)
+  nameWithType: NewtonsoftNdjsonMvcCoreBuilderExtensions.AddNewtonsoftNdjson(IMvcCoreBuilder)
+- uid: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.AddNewtonsoftNdjson*
+  name: AddNewtonsoftNdjson
+  href: api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_NewtonsoftNdjsonMvcCoreBuilderExtensions_AddNewtonsoftNdjson_
+  commentId: Overload:Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.AddNewtonsoftNdjson
+  isSpec: "True"
+  fullName: Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.AddNewtonsoftNdjson
+  nameWithType: NewtonsoftNdjsonMvcCoreBuilderExtensions.AddNewtonsoftNdjson
+- uid: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions
+  name: SystemTextNdjsonMvcBuilderExtensions
+  href: api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.html
+  commentId: T:Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions
+  fullName: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions
+  nameWithType: SystemTextNdjsonMvcBuilderExtensions
+- uid: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.AddNdjson(IMvcBuilder)
+  name: AddNdjson(IMvcBuilder)
+  href: api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_SystemTextNdjsonMvcBuilderExtensions_AddNdjson_IMvcBuilder_
+  commentId: M:Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.AddNdjson(IMvcBuilder)
+  fullName: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.AddNdjson(IMvcBuilder)
+  nameWithType: SystemTextNdjsonMvcBuilderExtensions.AddNdjson(IMvcBuilder)
+- uid: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.AddNdjson*
+  name: AddNdjson
+  href: api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_SystemTextNdjsonMvcBuilderExtensions_AddNdjson_
+  commentId: Overload:Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.AddNdjson
+  isSpec: "True"
+  fullName: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.AddNdjson
+  nameWithType: SystemTextNdjsonMvcBuilderExtensions.AddNdjson
+- uid: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions
+  name: SystemTextNdjsonMvcCoreBuilderExtensions
+  href: api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.html
+  commentId: T:Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions
+  fullName: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions
+  nameWithType: SystemTextNdjsonMvcCoreBuilderExtensions
+- uid: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.AddNdjson(IMvcCoreBuilder)
+  name: AddNdjson(IMvcCoreBuilder)
+  href: api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_SystemTextNdjsonMvcCoreBuilderExtensions_AddNdjson_IMvcCoreBuilder_
+  commentId: M:Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.AddNdjson(IMvcCoreBuilder)
+  fullName: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.AddNdjson(IMvcCoreBuilder)
+  nameWithType: SystemTextNdjsonMvcCoreBuilderExtensions.AddNdjson(IMvcCoreBuilder)
+- uid: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.AddNdjson*
+  name: AddNdjson
+  href: api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_SystemTextNdjsonMvcCoreBuilderExtensions_AddNdjson_
+  commentId: Overload:Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.AddNdjson
+  isSpec: "True"
+  fullName: Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.AddNdjson
+  nameWithType: SystemTextNdjsonMvcCoreBuilderExtensions.AddNdjson
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc
+  name: Ndjson.AsyncStreams.AspNetCore.Mvc
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.html
+  commentId: N:Ndjson.AsyncStreams.AspNetCore.Mvc
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc
+  nameWithType: Ndjson.AsyncStreams.AspNetCore.Mvc
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
+  name: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.html
+  commentId: N:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
+  nameWithType: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter
+  name: SystemTextNdjsonInputFormatter
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html
+  commentId: T:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter
+  nameWithType: SystemTextNdjsonInputFormatter
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.#ctor(System.Nullable{JsonOptions},ILogger{Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter})
+  name: SystemTextNdjsonInputFormatter(Nullable<JsonOptions>, ILogger<SystemTextNdjsonInputFormatter>)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter__ctor_System_Nullable_JsonOptions__ILogger_Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter__
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.#ctor(System.Nullable{JsonOptions},ILogger{Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter})
+  name.vb: SystemTextNdjsonInputFormatter(Nullable(Of JsonOptions), ILogger(Of SystemTextNdjsonInputFormatter))
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.SystemTextNdjsonInputFormatter(System.Nullable<JsonOptions>, ILogger<Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter>)
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.SystemTextNdjsonInputFormatter(System.Nullable(Of JsonOptions), ILogger(Of Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter))
+  nameWithType: SystemTextNdjsonInputFormatter.SystemTextNdjsonInputFormatter(Nullable<JsonOptions>, ILogger<SystemTextNdjsonInputFormatter>)
+  nameWithType.vb: SystemTextNdjsonInputFormatter.SystemTextNdjsonInputFormatter(Nullable(Of JsonOptions), ILogger(Of SystemTextNdjsonInputFormatter))
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.#ctor*
+  name: SystemTextNdjsonInputFormatter
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter__ctor_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.#ctor
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.SystemTextNdjsonInputFormatter
+  nameWithType: SystemTextNdjsonInputFormatter.SystemTextNdjsonInputFormatter
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.CanReadType(Type)
+  name: CanReadType(Type)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter_CanReadType_Type_
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.CanReadType(Type)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.CanReadType(Type)
+  nameWithType: SystemTextNdjsonInputFormatter.CanReadType(Type)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.CanReadType*
+  name: CanReadType
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter_CanReadType_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.CanReadType
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.CanReadType
+  nameWithType: SystemTextNdjsonInputFormatter.CanReadType
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ExceptionPolicy
+  name: ExceptionPolicy
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter_ExceptionPolicy
+  commentId: P:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ExceptionPolicy
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ExceptionPolicy
+  nameWithType: SystemTextNdjsonInputFormatter.ExceptionPolicy
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ExceptionPolicy*
+  name: ExceptionPolicy
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter_ExceptionPolicy_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ExceptionPolicy
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ExceptionPolicy
+  nameWithType: SystemTextNdjsonInputFormatter.ExceptionPolicy
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext,Encoding)
+  name: ReadRequestBodyAsync(InputFormatterContext, Encoding)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter_ReadRequestBodyAsync_InputFormatterContext_Encoding_
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext,Encoding)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext, Encoding)
+  nameWithType: SystemTextNdjsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext, Encoding)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ReadRequestBodyAsync*
+  name: ReadRequestBodyAsync
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter_ReadRequestBodyAsync_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ReadRequestBodyAsync
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.ReadRequestBodyAsync
+  nameWithType: SystemTextNdjsonInputFormatter.ReadRequestBodyAsync
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.SerializerOptions
+  name: SerializerOptions
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter_SerializerOptions
+  commentId: P:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.SerializerOptions
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.SerializerOptions
+  nameWithType: SystemTextNdjsonInputFormatter.SerializerOptions
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.SerializerOptions*
+  name: SerializerOptions
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_Formatters_SystemTextNdjsonInputFormatter_SerializerOptions_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.SerializerOptions
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.SerializerOptions
+  nameWithType: SystemTextNdjsonInputFormatter.SerializerOptions
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter`1
+  name: INdjsonWriter<T>
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter-1.html
+  commentId: T:Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter`1
+  name.vb: INdjsonWriter(Of T)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter<T>
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter(Of T)
+  nameWithType: INdjsonWriter<T>
+  nameWithType.vb: INdjsonWriter(Of T)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter`1.WriteAsync(`0)
+  name: WriteAsync(T)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_INdjsonWriter_1_WriteAsync__0_
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter`1.WriteAsync(`0)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter<T>.WriteAsync(T)
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter(Of T).WriteAsync(T)
+  nameWithType: INdjsonWriter<T>.WriteAsync(T)
+  nameWithType.vb: INdjsonWriter(Of T).WriteAsync(T)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter`1.WriteAsync(`0,CancellationToken)
+  name: WriteAsync(T, CancellationToken)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_INdjsonWriter_1_WriteAsync__0_CancellationToken_
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter`1.WriteAsync(`0,CancellationToken)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter<T>.WriteAsync(T, CancellationToken)
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter(Of T).WriteAsync(T, CancellationToken)
+  nameWithType: INdjsonWriter<T>.WriteAsync(T, CancellationToken)
+  nameWithType.vb: INdjsonWriter(Of T).WriteAsync(T, CancellationToken)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter`1.WriteAsync*
+  name: WriteAsync
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_INdjsonWriter_1_WriteAsync_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter`1.WriteAsync
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter<T>.WriteAsync
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter(Of T).WriteAsync
+  nameWithType: INdjsonWriter<T>.WriteAsync
+  nameWithType.vb: INdjsonWriter(Of T).WriteAsync
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory
+  name: INdjsonWriterFactory
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.html
+  commentId: T:Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory
+  nameWithType: INdjsonWriterFactory
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.CreateWriter*
+  name: CreateWriter
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.html#Ndjson_AsyncStreams_AspNetCore_Mvc_INdjsonWriterFactory_CreateWriter_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.CreateWriter
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.CreateWriter
+  nameWithType: INdjsonWriterFactory.CreateWriter
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.CreateWriter``1(ActionContext,IStatusCodeActionResult)
+  name: CreateWriter<T>(ActionContext, IStatusCodeActionResult)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.html#Ndjson_AsyncStreams_AspNetCore_Mvc_INdjsonWriterFactory_CreateWriter__1_ActionContext_IStatusCodeActionResult_
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.CreateWriter``1(ActionContext,IStatusCodeActionResult)
+  name.vb: CreateWriter(Of T)(ActionContext, IStatusCodeActionResult)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.CreateWriter<T>(ActionContext, IStatusCodeActionResult)
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.CreateWriter(Of T)(ActionContext, IStatusCodeActionResult)
+  nameWithType: INdjsonWriterFactory.CreateWriter<T>(ActionContext, IStatusCodeActionResult)
+  nameWithType.vb: INdjsonWriterFactory.CreateWriter(Of T)(ActionContext, IStatusCodeActionResult)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1
+  name: NdjsonAsyncEnumerableResult<T>
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html
+  commentId: T:Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1
+  name.vb: NdjsonAsyncEnumerableResult(Of T)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult<T>
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult(Of T)
+  nameWithType: NdjsonAsyncEnumerableResult<T>
+  nameWithType.vb: NdjsonAsyncEnumerableResult(Of T)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.#ctor(IAsyncEnumerable{`0})
+  name: NdjsonAsyncEnumerableResult(IAsyncEnumerable<T>)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NdjsonAsyncEnumerableResult_1__ctor_IAsyncEnumerable__0__
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.#ctor(IAsyncEnumerable{`0})
+  name.vb: NdjsonAsyncEnumerableResult(IAsyncEnumerable(Of T))
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult<T>.NdjsonAsyncEnumerableResult(IAsyncEnumerable<T>)
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult(Of T).NdjsonAsyncEnumerableResult(IAsyncEnumerable(Of T))
+  nameWithType: NdjsonAsyncEnumerableResult<T>.NdjsonAsyncEnumerableResult(IAsyncEnumerable<T>)
+  nameWithType.vb: NdjsonAsyncEnumerableResult(Of T).NdjsonAsyncEnumerableResult(IAsyncEnumerable(Of T))
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.#ctor*
+  name: NdjsonAsyncEnumerableResult
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NdjsonAsyncEnumerableResult_1__ctor_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.#ctor
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult<T>.NdjsonAsyncEnumerableResult
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult(Of T).NdjsonAsyncEnumerableResult
+  nameWithType: NdjsonAsyncEnumerableResult<T>.NdjsonAsyncEnumerableResult
+  nameWithType.vb: NdjsonAsyncEnumerableResult(Of T).NdjsonAsyncEnumerableResult
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.ExecuteResult(ActionContext)
+  name: ExecuteResult(ActionContext)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NdjsonAsyncEnumerableResult_1_ExecuteResult_ActionContext_
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.ExecuteResult(ActionContext)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult<T>.ExecuteResult(ActionContext)
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult(Of T).ExecuteResult(ActionContext)
+  nameWithType: NdjsonAsyncEnumerableResult<T>.ExecuteResult(ActionContext)
+  nameWithType.vb: NdjsonAsyncEnumerableResult(Of T).ExecuteResult(ActionContext)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.ExecuteResult*
+  name: ExecuteResult
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NdjsonAsyncEnumerableResult_1_ExecuteResult_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.ExecuteResult
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult<T>.ExecuteResult
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult(Of T).ExecuteResult
+  nameWithType: NdjsonAsyncEnumerableResult<T>.ExecuteResult
+  nameWithType.vb: NdjsonAsyncEnumerableResult(Of T).ExecuteResult
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.ExecuteResultAsync(ActionContext)
+  name: ExecuteResultAsync(ActionContext)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NdjsonAsyncEnumerableResult_1_ExecuteResultAsync_ActionContext_
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.ExecuteResultAsync(ActionContext)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult<T>.ExecuteResultAsync(ActionContext)
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult(Of T).ExecuteResultAsync(ActionContext)
+  nameWithType: NdjsonAsyncEnumerableResult<T>.ExecuteResultAsync(ActionContext)
+  nameWithType.vb: NdjsonAsyncEnumerableResult(Of T).ExecuteResultAsync(ActionContext)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.ExecuteResultAsync*
+  name: ExecuteResultAsync
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NdjsonAsyncEnumerableResult_1_ExecuteResultAsync_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.ExecuteResultAsync
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult<T>.ExecuteResultAsync
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult(Of T).ExecuteResultAsync
+  nameWithType: NdjsonAsyncEnumerableResult<T>.ExecuteResultAsync
+  nameWithType.vb: NdjsonAsyncEnumerableResult(Of T).ExecuteResultAsync
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.StatusCode
+  name: StatusCode
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NdjsonAsyncEnumerableResult_1_StatusCode
+  commentId: P:Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.StatusCode
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult<T>.StatusCode
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult(Of T).StatusCode
+  nameWithType: NdjsonAsyncEnumerableResult<T>.StatusCode
+  nameWithType.vb: NdjsonAsyncEnumerableResult(Of T).StatusCode
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.StatusCode*
+  name: StatusCode
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NdjsonAsyncEnumerableResult_1_StatusCode_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult`1.StatusCode
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult<T>.StatusCode
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult(Of T).StatusCode
+  nameWithType: NdjsonAsyncEnumerableResult<T>.StatusCode
+  nameWithType.vb: NdjsonAsyncEnumerableResult(Of T).StatusCode
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
+  name: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.html
+  commentId: N:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
+  nameWithType: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter
+  name: NewtonsoftNdjsonInputFormatter
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html
+  commentId: T:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter
+  nameWithType: NewtonsoftNdjsonInputFormatter
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.#ctor(JsonSerializerSettings,ILogger{Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter})
+  name: NewtonsoftNdjsonInputFormatter(JsonSerializerSettings, ILogger<NewtonsoftNdjsonInputFormatter>)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter__ctor_JsonSerializerSettings_ILogger_Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter__
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.#ctor(JsonSerializerSettings,ILogger{Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter})
+  name.vb: NewtonsoftNdjsonInputFormatter(JsonSerializerSettings, ILogger(Of NewtonsoftNdjsonInputFormatter))
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.NewtonsoftNdjsonInputFormatter(JsonSerializerSettings, ILogger<Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter>)
+  fullName.vb: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.NewtonsoftNdjsonInputFormatter(JsonSerializerSettings, ILogger(Of Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter))
+  nameWithType: NewtonsoftNdjsonInputFormatter.NewtonsoftNdjsonInputFormatter(JsonSerializerSettings, ILogger<NewtonsoftNdjsonInputFormatter>)
+  nameWithType.vb: NewtonsoftNdjsonInputFormatter.NewtonsoftNdjsonInputFormatter(JsonSerializerSettings, ILogger(Of NewtonsoftNdjsonInputFormatter))
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.#ctor*
+  name: NewtonsoftNdjsonInputFormatter
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter__ctor_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.#ctor
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.NewtonsoftNdjsonInputFormatter
+  nameWithType: NewtonsoftNdjsonInputFormatter.NewtonsoftNdjsonInputFormatter
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.CanReadType(Type)
+  name: CanReadType(Type)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter_CanReadType_Type_
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.CanReadType(Type)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.CanReadType(Type)
+  nameWithType: NewtonsoftNdjsonInputFormatter.CanReadType(Type)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.CanReadType*
+  name: CanReadType
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter_CanReadType_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.CanReadType
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.CanReadType
+  nameWithType: NewtonsoftNdjsonInputFormatter.CanReadType
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ExceptionPolicy
+  name: ExceptionPolicy
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter_ExceptionPolicy
+  commentId: P:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ExceptionPolicy
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ExceptionPolicy
+  nameWithType: NewtonsoftNdjsonInputFormatter.ExceptionPolicy
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ExceptionPolicy*
+  name: ExceptionPolicy
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter_ExceptionPolicy_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ExceptionPolicy
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ExceptionPolicy
+  nameWithType: NewtonsoftNdjsonInputFormatter.ExceptionPolicy
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext,Encoding)
+  name: ReadRequestBodyAsync(InputFormatterContext, Encoding)
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter_ReadRequestBodyAsync_InputFormatterContext_Encoding_
+  commentId: M:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext,Encoding)
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext, Encoding)
+  nameWithType: NewtonsoftNdjsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext, Encoding)
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ReadRequestBodyAsync*
+  name: ReadRequestBodyAsync
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter_ReadRequestBodyAsync_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ReadRequestBodyAsync
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.ReadRequestBodyAsync
+  nameWithType: NewtonsoftNdjsonInputFormatter.ReadRequestBodyAsync
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.SerializerSettings
+  name: SerializerSettings
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter_SerializerSettings
+  commentId: P:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.SerializerSettings
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.SerializerSettings
+  nameWithType: NewtonsoftNdjsonInputFormatter.SerializerSettings
+- uid: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.SerializerSettings*
+  name: SerializerSettings
+  href: api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html#Ndjson_AsyncStreams_AspNetCore_Mvc_NewtonsoftJson_Formatters_NewtonsoftNdjsonInputFormatter_SerializerSettings_
+  commentId: Overload:Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.SerializerSettings
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.SerializerSettings
+  nameWithType: NewtonsoftNdjsonInputFormatter.SerializerSettings
+- uid: Ndjson.AsyncStreams.Net.Http
+  name: Ndjson.AsyncStreams.Net.Http
+  href: api/Ndjson.AsyncStreams.Net.Http.html
+  commentId: N:Ndjson.AsyncStreams.Net.Http
+  fullName: Ndjson.AsyncStreams.Net.Http
+  nameWithType: Ndjson.AsyncStreams.Net.Http
+- uid: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions
+  name: HttpClientNdjsonExtensions
+  href: api/Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.html
+  commentId: T:Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions
+  fullName: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions
+  nameWithType: HttpClientNdjsonExtensions
+- uid: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync*
+  name: PostAsNdjsonAsync
+  href: api/Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.html#Ndjson_AsyncStreams_Net_Http_HttpClientNdjsonExtensions_PostAsNdjsonAsync_
+  commentId: Overload:Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync
+  nameWithType: HttpClientNdjsonExtensions.PostAsNdjsonAsync
+- uid: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync``1(HttpClient,System.Nullable{System.String},IAsyncEnumerable{``0},CancellationToken)
+  name: PostAsNdjsonAsync<T>(HttpClient, Nullable<String>, IAsyncEnumerable<T>, CancellationToken)
+  href: api/Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.html#Ndjson_AsyncStreams_Net_Http_HttpClientNdjsonExtensions_PostAsNdjsonAsync__1_HttpClient_System_Nullable_System_String__IAsyncEnumerable___0__CancellationToken_
+  commentId: M:Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync``1(HttpClient,System.Nullable{System.String},IAsyncEnumerable{``0},CancellationToken)
+  name.vb: PostAsNdjsonAsync(Of T)(HttpClient, Nullable(Of String), IAsyncEnumerable(Of T), CancellationToken)
+  fullName: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync<T>(HttpClient, System.Nullable<System.String>, IAsyncEnumerable<T>, CancellationToken)
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync(Of T)(HttpClient, System.Nullable(Of System.String), IAsyncEnumerable(Of T), CancellationToken)
+  nameWithType: HttpClientNdjsonExtensions.PostAsNdjsonAsync<T>(HttpClient, Nullable<String>, IAsyncEnumerable<T>, CancellationToken)
+  nameWithType.vb: HttpClientNdjsonExtensions.PostAsNdjsonAsync(Of T)(HttpClient, Nullable(Of String), IAsyncEnumerable(Of T), CancellationToken)
+- uid: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync``1(HttpClient,System.Nullable{System.String},IAsyncEnumerable{``0},System.Nullable{JsonSerializerOptions},CancellationToken)
+  name: PostAsNdjsonAsync<T>(HttpClient, Nullable<String>, IAsyncEnumerable<T>, Nullable<JsonSerializerOptions>, CancellationToken)
+  href: api/Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.html#Ndjson_AsyncStreams_Net_Http_HttpClientNdjsonExtensions_PostAsNdjsonAsync__1_HttpClient_System_Nullable_System_String__IAsyncEnumerable___0__System_Nullable_JsonSerializerOptions__CancellationToken_
+  commentId: M:Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync``1(HttpClient,System.Nullable{System.String},IAsyncEnumerable{``0},System.Nullable{JsonSerializerOptions},CancellationToken)
+  name.vb: PostAsNdjsonAsync(Of T)(HttpClient, Nullable(Of String), IAsyncEnumerable(Of T), Nullable(Of JsonSerializerOptions), CancellationToken)
+  fullName: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync<T>(HttpClient, System.Nullable<System.String>, IAsyncEnumerable<T>, System.Nullable<JsonSerializerOptions>, CancellationToken)
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync(Of T)(HttpClient, System.Nullable(Of System.String), IAsyncEnumerable(Of T), System.Nullable(Of JsonSerializerOptions), CancellationToken)
+  nameWithType: HttpClientNdjsonExtensions.PostAsNdjsonAsync<T>(HttpClient, Nullable<String>, IAsyncEnumerable<T>, Nullable<JsonSerializerOptions>, CancellationToken)
+  nameWithType.vb: HttpClientNdjsonExtensions.PostAsNdjsonAsync(Of T)(HttpClient, Nullable(Of String), IAsyncEnumerable(Of T), Nullable(Of JsonSerializerOptions), CancellationToken)
+- uid: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync``1(HttpClient,System.Nullable{Uri},IAsyncEnumerable{``0},CancellationToken)
+  name: PostAsNdjsonAsync<T>(HttpClient, Nullable<Uri>, IAsyncEnumerable<T>, CancellationToken)
+  href: api/Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.html#Ndjson_AsyncStreams_Net_Http_HttpClientNdjsonExtensions_PostAsNdjsonAsync__1_HttpClient_System_Nullable_Uri__IAsyncEnumerable___0__CancellationToken_
+  commentId: M:Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync``1(HttpClient,System.Nullable{Uri},IAsyncEnumerable{``0},CancellationToken)
+  name.vb: PostAsNdjsonAsync(Of T)(HttpClient, Nullable(Of Uri), IAsyncEnumerable(Of T), CancellationToken)
+  fullName: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync<T>(HttpClient, System.Nullable<Uri>, IAsyncEnumerable<T>, CancellationToken)
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync(Of T)(HttpClient, System.Nullable(Of Uri), IAsyncEnumerable(Of T), CancellationToken)
+  nameWithType: HttpClientNdjsonExtensions.PostAsNdjsonAsync<T>(HttpClient, Nullable<Uri>, IAsyncEnumerable<T>, CancellationToken)
+  nameWithType.vb: HttpClientNdjsonExtensions.PostAsNdjsonAsync(Of T)(HttpClient, Nullable(Of Uri), IAsyncEnumerable(Of T), CancellationToken)
+- uid: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync``1(HttpClient,System.Nullable{Uri},IAsyncEnumerable{``0},System.Nullable{JsonSerializerOptions},CancellationToken)
+  name: PostAsNdjsonAsync<T>(HttpClient, Nullable<Uri>, IAsyncEnumerable<T>, Nullable<JsonSerializerOptions>, CancellationToken)
+  href: api/Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.html#Ndjson_AsyncStreams_Net_Http_HttpClientNdjsonExtensions_PostAsNdjsonAsync__1_HttpClient_System_Nullable_Uri__IAsyncEnumerable___0__System_Nullable_JsonSerializerOptions__CancellationToken_
+  commentId: M:Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync``1(HttpClient,System.Nullable{Uri},IAsyncEnumerable{``0},System.Nullable{JsonSerializerOptions},CancellationToken)
+  name.vb: PostAsNdjsonAsync(Of T)(HttpClient, Nullable(Of Uri), IAsyncEnumerable(Of T), Nullable(Of JsonSerializerOptions), CancellationToken)
+  fullName: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync<T>(HttpClient, System.Nullable<Uri>, IAsyncEnumerable<T>, System.Nullable<JsonSerializerOptions>, CancellationToken)
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.PostAsNdjsonAsync(Of T)(HttpClient, System.Nullable(Of Uri), IAsyncEnumerable(Of T), System.Nullable(Of JsonSerializerOptions), CancellationToken)
+  nameWithType: HttpClientNdjsonExtensions.PostAsNdjsonAsync<T>(HttpClient, Nullable<Uri>, IAsyncEnumerable<T>, Nullable<JsonSerializerOptions>, CancellationToken)
+  nameWithType.vb: HttpClientNdjsonExtensions.PostAsNdjsonAsync(Of T)(HttpClient, Nullable(Of Uri), IAsyncEnumerable(Of T), Nullable(Of JsonSerializerOptions), CancellationToken)
+- uid: Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions
+  name: HttpContentNdjsonExtensions
+  href: api/Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.html
+  commentId: T:Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions
+  fullName: Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions
+  nameWithType: HttpContentNdjsonExtensions
+- uid: Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.ReadFromNdjsonAsync*
+  name: ReadFromNdjsonAsync
+  href: api/Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.html#Ndjson_AsyncStreams_Net_Http_HttpContentNdjsonExtensions_ReadFromNdjsonAsync_
+  commentId: Overload:Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.ReadFromNdjsonAsync
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.ReadFromNdjsonAsync
+  nameWithType: HttpContentNdjsonExtensions.ReadFromNdjsonAsync
+- uid: Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.ReadFromNdjsonAsync``1(HttpContent,System.Nullable{JsonSerializerOptions},CancellationToken)
+  name: ReadFromNdjsonAsync<T>(HttpContent, Nullable<JsonSerializerOptions>, CancellationToken)
+  href: api/Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.html#Ndjson_AsyncStreams_Net_Http_HttpContentNdjsonExtensions_ReadFromNdjsonAsync__1_HttpContent_System_Nullable_JsonSerializerOptions__CancellationToken_
+  commentId: M:Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.ReadFromNdjsonAsync``1(HttpContent,System.Nullable{JsonSerializerOptions},CancellationToken)
+  name.vb: ReadFromNdjsonAsync(Of T)(HttpContent, Nullable(Of JsonSerializerOptions), CancellationToken)
+  fullName: Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.ReadFromNdjsonAsync<T>(HttpContent, System.Nullable<JsonSerializerOptions>, CancellationToken)
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.ReadFromNdjsonAsync(Of T)(HttpContent, System.Nullable(Of JsonSerializerOptions), CancellationToken)
+  nameWithType: HttpContentNdjsonExtensions.ReadFromNdjsonAsync<T>(HttpContent, Nullable<JsonSerializerOptions>, CancellationToken)
+  nameWithType.vb: HttpContentNdjsonExtensions.ReadFromNdjsonAsync(Of T)(HttpContent, Nullable(Of JsonSerializerOptions), CancellationToken)
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1
+  name: NdjsonAsyncEnumerableContent<T>
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html
+  commentId: T:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1
+  name.vb: NdjsonAsyncEnumerableContent(Of T)
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T)
+  nameWithType: NdjsonAsyncEnumerableContent<T>
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T)
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.#ctor(IAsyncEnumerable{`0},System.Nullable{JsonSerializerOptions})
+  name: NdjsonAsyncEnumerableContent(IAsyncEnumerable<T>, Nullable<JsonSerializerOptions>)
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1__ctor_IAsyncEnumerable__0__System_Nullable_JsonSerializerOptions__
+  commentId: M:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.#ctor(IAsyncEnumerable{`0},System.Nullable{JsonSerializerOptions})
+  name.vb: NdjsonAsyncEnumerableContent(IAsyncEnumerable(Of T), Nullable(Of JsonSerializerOptions))
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>.NdjsonAsyncEnumerableContent(IAsyncEnumerable<T>, System.Nullable<JsonSerializerOptions>)
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).NdjsonAsyncEnumerableContent(IAsyncEnumerable(Of T), System.Nullable(Of JsonSerializerOptions))
+  nameWithType: NdjsonAsyncEnumerableContent<T>.NdjsonAsyncEnumerableContent(IAsyncEnumerable<T>, Nullable<JsonSerializerOptions>)
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).NdjsonAsyncEnumerableContent(IAsyncEnumerable(Of T), Nullable(Of JsonSerializerOptions))
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.#ctor*
+  name: NdjsonAsyncEnumerableContent
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1__ctor_
+  commentId: Overload:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.#ctor
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>.NdjsonAsyncEnumerableContent
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).NdjsonAsyncEnumerableContent
+  nameWithType: NdjsonAsyncEnumerableContent<T>.NdjsonAsyncEnumerableContent
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).NdjsonAsyncEnumerableContent
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.SerializeToStreamAsync(Stream,System.Nullable{TransportContext})
+  name: SerializeToStreamAsync(Stream, Nullable<TransportContext>)
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1_SerializeToStreamAsync_Stream_System_Nullable_TransportContext__
+  commentId: M:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.SerializeToStreamAsync(Stream,System.Nullable{TransportContext})
+  name.vb: SerializeToStreamAsync(Stream, Nullable(Of TransportContext))
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>.SerializeToStreamAsync(Stream, System.Nullable<TransportContext>)
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).SerializeToStreamAsync(Stream, System.Nullable(Of TransportContext))
+  nameWithType: NdjsonAsyncEnumerableContent<T>.SerializeToStreamAsync(Stream, Nullable<TransportContext>)
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).SerializeToStreamAsync(Stream, Nullable(Of TransportContext))
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.SerializeToStreamAsync*
+  name: SerializeToStreamAsync
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1_SerializeToStreamAsync_
+  commentId: Overload:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.SerializeToStreamAsync
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>.SerializeToStreamAsync
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).SerializeToStreamAsync
+  nameWithType: NdjsonAsyncEnumerableContent<T>.SerializeToStreamAsync
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).SerializeToStreamAsync
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.TryComputeLength(System.Int64@)
+  name: TryComputeLength(out Int64)
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1_TryComputeLength_System_Int64__
+  commentId: M:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.TryComputeLength(System.Int64@)
+  name.vb: TryComputeLength(ByRef Int64)
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>.TryComputeLength(out System.Int64)
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).TryComputeLength(ByRef System.Int64)
+  nameWithType: NdjsonAsyncEnumerableContent<T>.TryComputeLength(out Int64)
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).TryComputeLength(ByRef Int64)
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.TryComputeLength*
+  name: TryComputeLength
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1_TryComputeLength_
+  commentId: Overload:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.TryComputeLength
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>.TryComputeLength
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).TryComputeLength
+  nameWithType: NdjsonAsyncEnumerableContent<T>.TryComputeLength
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).TryComputeLength
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.Values
+  name: Values
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1_Values
+  commentId: P:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.Values
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>.Values
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).Values
+  nameWithType: NdjsonAsyncEnumerableContent<T>.Values
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).Values
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.Values*
+  name: Values
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1_Values_
+  commentId: Overload:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.Values
+  isSpec: "True"
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>.Values
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).Values
+  nameWithType: NdjsonAsyncEnumerableContent<T>.Values
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).Values
