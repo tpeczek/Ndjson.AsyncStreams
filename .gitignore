@@ -166,6 +166,11 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
+# DocFX is a documentation generator utility
+docs/Ndjson.AsyncStreams.DocFx/log.txt
+docs/Ndjson.AsyncStreams.DocFx/api/
+docs/Ndjson.AsyncStreams.DocFx/wwwroot/
+
 # Click-Once directory
 publish/
 

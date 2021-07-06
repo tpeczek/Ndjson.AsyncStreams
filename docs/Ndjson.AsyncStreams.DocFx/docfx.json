@@ -1,0 +1,50 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "src/Ndjson.AsyncStreams.Net.Http/Ndjson.AsyncStreams.Net.Http.csproj",
+            "src/Ndjson.AsyncStreams.AspNetCore.Mvc/Ndjson.AsyncStreams.AspNetCore.Mvc.csproj",
+            "src/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.csproj"
+          ],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
+          "src": "../.."
+        }
+      ],
+      "dest": "api",
+      "properties": {
+        "TargetFramework": "net5.0"
+      }
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/*.yml",
+          "toc.md",
+          "index.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "resources/svg/logo.svg",
+          "resources/ico/favicon.ico"
+        ]
+      }
+    ],
+    "dest": "wwwroot",
+    "globalMetadata": {
+      "_appTitle": "Ndjson.AsyncStreams",
+      "_appFooter": "Copyright © 2021 Tomasz Pêczek",
+      "_appLogoPath": "resources/svg/logo.svg",
+      "_appFaviconPath": "resources/ico/favicon.ico",
+      "_disableBreadcrumb": true,
+      "_disableAffix": true,
+      "_disableContribution": true
+    }
+  }
+}
