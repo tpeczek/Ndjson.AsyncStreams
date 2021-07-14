@@ -1,1 +1,2 @@
 ﻿[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Ndjson.AsyncStreams.AspNetCore.Mvc.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson")]

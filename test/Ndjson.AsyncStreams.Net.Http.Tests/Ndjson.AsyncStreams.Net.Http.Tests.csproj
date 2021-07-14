@@ -19,7 +19,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Ndjson.AsyncStreams.Net.Http\Ndjson.AsyncStreams.Net.Http.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Functional\" />
-  </ItemGroup>
 </Project>

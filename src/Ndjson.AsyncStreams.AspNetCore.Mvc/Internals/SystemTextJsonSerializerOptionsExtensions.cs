@@ -3,10 +3,25 @@ using System.Text.Encodings.Web;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 {
-    internal static class JsonSerializerOptionsCopyConstructor
+    internal static class SystemTextJsonSerializerOptionsExtensions
     {
-        public static JsonSerializerOptions Copy(this JsonSerializerOptions serializerOptions, JavaScriptEncoder encoder)
+#if NETCOREAPP3_1
+        private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new()
         {
+            PropertyNameCaseInsensitive = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        };
+#endif
+
+#if NET5_0
+        private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new(JsonSerializerDefaults.Web);
+#endif
+
+        public static JsonSerializerOptions DefaultJsonSerializerOptions => _defaultJsonSerializerOptions;
+
+        public static JsonSerializerOptions CreateCopyWithDifferentEncoder(this JsonSerializerOptions serializerOptions, JavaScriptEncoder encoder)
+        {
+#if NETCOREAPP3_1
             var copiedOptions = new JsonSerializerOptions
             {
                 AllowTrailingCommas = serializerOptions.AllowTrailingCommas,
@@ -25,7 +40,11 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
             {
                 copiedOptions.Converters.Add(serializerOptions.Converters[i]);
             }
+#endif
 
+#if NET5_0
+            var copiedOptions = new JsonSerializerOptions(serializerOptions);
+#endif
             copiedOptions.Encoder = encoder;
 
             return copiedOptions;

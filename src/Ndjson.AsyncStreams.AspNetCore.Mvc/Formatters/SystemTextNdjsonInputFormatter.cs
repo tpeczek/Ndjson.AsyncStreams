@@ -4,10 +4,10 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Microsoft.Net.Http.Headers;
-using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.Extensions.Logging;
+using Ndjson.AsyncStreams.AspNetCore.Mvc.Internals;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
 {
@@ -42,18 +42,6 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
             }
         }
 
-#if NETCOREAPP3_1
-        private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new()
-        {
-            PropertyNameCaseInsensitive = true,
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-        };
-#endif
-
-#if NET5_0
-        private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new(JsonSerializerDefaults.Web);
-#endif
-
         private static readonly Type _asyncEnumerableType = typeof(IAsyncEnumerable<>);
 
         private readonly ILogger<SystemTextNdjsonInputFormatter> _logger;
@@ -76,13 +64,13 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
         /// <param name="logger">The <see cref="ILogger"/>.</param>
         public SystemTextNdjsonInputFormatter(JsonOptions? options, ILogger<SystemTextNdjsonInputFormatter> logger)
         {
-            SerializerOptions = options?.JsonSerializerOptions ?? _defaultJsonSerializerOptions;
+            SerializerOptions = options?.JsonSerializerOptions ?? SystemTextJsonSerializerOptionsExtensions.DefaultJsonSerializerOptions;
 
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
             SupportedEncodings.Add(UTF8EncodingWithoutBOM);
 
-            SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/x-ndjson"));
+            SupportedMediaTypes.Add(MediaTypeHeaderValues.ApplicationNdjson);
         }
 
         /// <inheritdoc />

@@ -24,7 +24,4 @@
     <ProjectReference Include="..\..\src\Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson\Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.csproj" />
     <ProjectReference Include="..\..\src\Ndjson.AsyncStreams.AspNetCore.Mvc\Ndjson.AsyncStreams.AspNetCore.Mvc.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Functional\" />
-  </ItemGroup>
 </Project>

@@ -3,10 +3,10 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Microsoft.Net.Http.Headers;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Newtonsoft.Json;
+using Ndjson.AsyncStreams.AspNetCore.Mvc.Internals;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
 {
@@ -69,7 +69,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
 
             SupportedEncodings.Add(UTF8EncodingWithoutBOM);
 
-            SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/x-ndjson"));
+            SupportedMediaTypes.Add(MediaTypeHeaderValues.ApplicationNdjson);
         }
 
         /// <inheritdoc />

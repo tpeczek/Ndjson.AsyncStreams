@@ -1,8 +1,8 @@
 ﻿using System.IO;
 using System.Buffers;
-using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Ndjson.AsyncStreams.AspNetCore.Mvc.Internals;
@@ -33,7 +33,19 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit
 
         private static INdjsonWriter<ValueType> PrepareSystemTextNdjsonWriter(Stream writeStream)
         {
-            return new SystemTextNdjsonWriter<ValueType>(writeStream, new JsonOptions());
+#if NETCOREAPP3_1
+            JsonSerializerOptions jsonSerializerOptions = new()
+            {
+                PropertyNameCaseInsensitive = true,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+#endif
+
+#if NET5_0
+            JsonSerializerOptions jsonSerializerOptions = new(JsonSerializerDefaults.Web);
+#endif
+
+            return new SystemTextNdjsonWriter<ValueType>(writeStream, jsonSerializerOptions);
         }
 
         private static INdjsonWriter<ValueType> PrepareNewtonsoftNdjsonWriter(Stream writeStream)

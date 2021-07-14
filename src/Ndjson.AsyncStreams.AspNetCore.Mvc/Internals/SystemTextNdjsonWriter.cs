@@ -2,10 +2,8 @@
 using System.IO;
 using System.Text;
 using System.Text.Json;
-using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 {
@@ -16,15 +14,10 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
         private readonly Stream _writeStream;
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 
-        public SystemTextNdjsonWriter(Stream writeStream, JsonOptions jsonOptions)
+        public SystemTextNdjsonWriter(Stream writeStream, JsonSerializerOptions jsonSerializerOptions)
         {
-            _writeStream = writeStream ?? throw new ArgumentNullException(nameof(Stream));
-
-            _jsonSerializerOptions = jsonOptions.JsonSerializerOptions;
-            if (_jsonSerializerOptions.Encoder is null)
-            {
-                _jsonSerializerOptions = _jsonSerializerOptions.Copy(JavaScriptEncoder.UnsafeRelaxedJsonEscaping);
-            }
+            _writeStream = writeStream ?? throw new ArgumentNullException(nameof(writeStream));
+            _jsonSerializerOptions = jsonSerializerOptions ?? throw new ArgumentNullException(nameof(jsonSerializerOptions));
         }
 
         public Task WriteAsync(T value)

@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Buffers;
 using System.Text;
-using Microsoft.Net.Http.Headers;
+using System.Buffers;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Ndjson.AsyncStreams.AspNetCore.Mvc.Internals;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Internals
 {
     internal class NewtonsoftNdjsonWriterFactory : INdjsonWriterFactory
     {
-        private static readonly string CONTENT_TYPE = new MediaTypeHeaderValue("application/x-ndjson")
-        {
-            Encoding = Encoding.UTF8
-        }.ToString();
+        private static readonly string CONTENT_TYPE = MediaTypeHeaderValues.ApplicationNdjsonWithUTF8Encoding.ToString();
 
         private readonly IHttpResponseStreamWriterFactory _httpResponseStreamWriterFactory;
         private readonly MvcNewtonsoftJsonOptions _options;
@@ -55,18 +52,9 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Internals
                 response.StatusCode = result.StatusCode.Value;
             }
 
-            DisableResponseBuffering(context.HttpContext);
+            context.HttpContext.DisableResponseBuffering();
 
             return new NewtonsoftNdjsonWriter<T>(_httpResponseStreamWriterFactory.CreateWriter(response.Body, Encoding.UTF8), _options.SerializerSettings, _jsonArrayPool);
-        }
-
-        private static void DisableResponseBuffering(HttpContext context)
-        {
-            IHttpResponseBodyFeature responseBodyFeature = context.Features.Get<IHttpResponseBodyFeature>();
-            if (responseBodyFeature != null)
-            {
-                responseBodyFeature.DisableBuffering();
-            }
         }
     }
 }

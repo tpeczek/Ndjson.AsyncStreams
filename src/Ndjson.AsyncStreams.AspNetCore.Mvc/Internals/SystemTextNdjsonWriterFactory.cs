@@ -1,26 +1,31 @@
 ﻿using System;
-using System.Text;
-using Microsoft.Net.Http.Headers;
-using Microsoft.Extensions.Options;
+using System.Text.Json;
+using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Extensions.Options;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 {
     internal class SystemTextNdjsonWriterFactory : INdjsonWriterFactory
     {
-        private static readonly string CONTENT_TYPE = new MediaTypeHeaderValue("application/x-ndjson")
-        {
-            Encoding = Encoding.UTF8
-        }.ToString();
+        private static readonly string CONTENT_TYPE = MediaTypeHeaderValues.ApplicationNdjsonWithUTF8Encoding.ToString();
 
-        private readonly JsonOptions _options;
+        private readonly JsonSerializerOptions _jsonSerializerOptions;
 
         public SystemTextNdjsonWriterFactory(IOptions<JsonOptions> options)
         {
-            _options = options?.Value ?? throw new ArgumentNullException(nameof(options));
+            if (options is null || options.Value is null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
+
+            _jsonSerializerOptions = options.Value.JsonSerializerOptions;
+            if (_jsonSerializerOptions.Encoder is null)
+            {
+                _jsonSerializerOptions = _jsonSerializerOptions.CreateCopyWithDifferentEncoder(JavaScriptEncoder.UnsafeRelaxedJsonEscaping);
+            }
         }
 
         public INdjsonWriter<T> CreateWriter<T>(ActionContext context, IStatusCodeActionResult result)
@@ -44,18 +49,9 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
                 response.StatusCode = result.StatusCode.Value;
             }
 
-            DisableResponseBuffering(context.HttpContext);
+            context.HttpContext.DisableResponseBuffering();
 
-            return new SystemTextNdjsonWriter<T>(response.Body, _options);
-        }
-
-        private static void DisableResponseBuffering(HttpContext context)
-        {
-            IHttpResponseBodyFeature responseBodyFeature = context.Features.Get<IHttpResponseBodyFeature>();
-            if (responseBodyFeature != null)
-            {
-                responseBodyFeature.DisableBuffering();
-            }
+            return new SystemTextNdjsonWriter<T>(response.Body, _jsonSerializerOptions);
         }
     }
 }
