@@ -1,16 +1,20 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Linq;
+using System.Text;
+using System.Buffers;
+using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
-using Microsoft.Extensions.Logging.Abstractions;
-using Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters;
-using Xunit;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
-using System.Linq;
+using Microsoft.Extensions.Logging.Abstractions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters;
+using Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters;
+using Xunit;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit.Formatters
 {
@@ -29,12 +33,22 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit.Formatters
 
         public static IEnumerable<object[]> NdjsonOutputFormatters => new List<object[]>
         {
-            new object[] { PrepareSystemTextNdjsonOutputFormatter() }
+            new object[] { PrepareSystemTextNdjsonOutputFormatter() },
+            new object[] { PrepareNewtonsoftNdjsonOutputFormatter() }
         };
 
         private static TextOutputFormatter PrepareSystemTextNdjsonOutputFormatter()
         {
             return new SystemTextNdjsonOutputFormatter(new JsonOptions(), new NullLogger<SystemTextNdjsonOutputFormatter>());
+        }
+
+        private static TextOutputFormatter PrepareNewtonsoftNdjsonOutputFormatter()
+        {
+            return new NewtonsoftNdjsonOutputFormatter(
+                new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() },
+                ArrayPool<char>.Create(),
+                new NullLogger<NewtonsoftNdjsonOutputFormatter>()
+            );
         }
 
         private static async IAsyncEnumerable<ValueType> GetValuesAsync()
