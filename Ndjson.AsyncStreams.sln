@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{55EFE6F9-33D5-4153-B1DE-5672827DEB08}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0889D597-88B4-432C-8C30-DE10CAD53834}"
 EndProject
@@ -19,7 +22,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ndjson.AsyncStreams.AspNetC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{3E0EBFB8-5167-4F4F-8A0F-C013D23D5238}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ndjson.AsyncStreams.DocFx", "docs\Ndjson.AsyncStreams.DocFx\Ndjson.AsyncStreams.DocFx.csproj", "{96123E46-1C81-4810-B710-FD4B1F08E582}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ndjson.AsyncStreams.DocFx", "docs\Ndjson.AsyncStreams.DocFx\Ndjson.AsyncStreams.DocFx.csproj", "{96123E46-1C81-4810-B710-FD4B1F08E582}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
