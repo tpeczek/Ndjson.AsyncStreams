@@ -1,4 +1,4 @@
-name: [CI] Ndjson.AsyncStreams
+name: Ndjson.AsyncStreams - Continuous Integration
 on:
   push:
     branches:
