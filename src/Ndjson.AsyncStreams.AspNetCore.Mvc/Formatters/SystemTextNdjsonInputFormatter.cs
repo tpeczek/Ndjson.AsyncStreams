@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Logging;
@@ -44,6 +45,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
 
         private static readonly Type _asyncEnumerableType = typeof(IAsyncEnumerable<>);
 
+        private readonly ConcurrentDictionary<Type, IAsyncEnumerableModelReader?> _asyncEnumerableModelReaders = new();
         private readonly ILogger<SystemTextNdjsonInputFormatter> _logger;
 
         /// <inheritdoc />
@@ -92,12 +94,11 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
                 throw new ArgumentNullException(nameof(encoding));
             }
 
-            Type modelReaderType = typeof(AsyncEnumerableModelReader<>).MakeGenericType(context.ModelType.GetGenericArguments()[0]);
-            IAsyncEnumerableModelReader? modelReader = (IAsyncEnumerableModelReader?)Activator.CreateInstance(modelReaderType);
+            IAsyncEnumerableModelReader? modelReader = GetModelReader(context.ModelType);
 
             if (modelReader is null)
             {
-                string errorMessage = $"Couldn't create an instance of {modelReaderType.Name} for deserializing incoming async stream.";
+                string errorMessage = $"Couldn't create an instance of {nameof(IAsyncEnumerableModelReader)} for deserializing incoming async stream.";
 
                 _logger.LogDebug(errorMessage);
                 context.ModelState.TryAddModelError(String.Empty, errorMessage);
@@ -106,6 +107,20 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
             }
 
             return Task.FromResult(InputFormatterResult.Success(modelReader.ReadModel(context.HttpContext.Request.Body, SerializerOptions)));
+        }
+
+        private IAsyncEnumerableModelReader? GetModelReader(Type modelType)
+        {
+            IAsyncEnumerableModelReader? modelReader;
+            if (!_asyncEnumerableModelReaders.TryGetValue(modelType, out modelReader))
+            {
+                Type modelReaderType = typeof(AsyncEnumerableModelReader<>).MakeGenericType(modelType.GetGenericArguments()[0]);
+                modelReader = (IAsyncEnumerableModelReader?)Activator.CreateInstance(modelReaderType);
+
+                _asyncEnumerableModelReaders.TryAdd(modelType, modelReader);
+            }
+
+            return modelReader;
         }
     }
 }

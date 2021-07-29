@@ -4,6 +4,7 @@ using System.Text;
 using System.Buffers;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -43,6 +44,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
 
         private static readonly Type _asyncEnumerableType = typeof(IAsyncEnumerable<>);
 
+        private readonly ConcurrentDictionary<Type, IAsyncEnumerableStreamSerializer?> _asyncEnumerableStreamSerializers = new();
         private readonly NewtonsoftNdjsonArrayPool _jsonArrayPool;
         private readonly ILogger<NewtonsoftNdjsonOutputFormatter> _logger;
 
@@ -97,12 +99,11 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
                 throw new ArgumentNullException(nameof(selectedEncoding));
             }
 
-            Type serializerType = typeof(AsyncEnumerableStreamSerializer<>).MakeGenericType(context.ObjectType.GetGenericArguments()[0]);
-            IAsyncEnumerableStreamSerializer? serializer = (IAsyncEnumerableStreamSerializer?)Activator.CreateInstance(serializerType);
+            IAsyncEnumerableStreamSerializer? serializer = GetSerializer(context.ObjectType);
 
             if (serializer is null)
             {
-                throw new Exception($"Couldn't create an instance of {serializerType.Name} for serializing async stream.");
+                throw new Exception($"Couldn't create an instance of {nameof(IAsyncEnumerableStreamSerializer)} for serializing async stream.");
             }
 
             context.HttpContext.DisableResponseBuffering();
@@ -111,6 +112,20 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
             {
                 await serializer.SerializeAsync(context.Object, textResponseStreamWriter, SerializerSettings, _jsonArrayPool);
             }
+        }
+
+        private IAsyncEnumerableStreamSerializer? GetSerializer(Type objectType)
+        {
+            IAsyncEnumerableStreamSerializer? serializer;
+            if (!_asyncEnumerableStreamSerializers.TryGetValue(objectType, out serializer))
+            {
+                Type serializerType = typeof(AsyncEnumerableStreamSerializer<>).MakeGenericType(objectType.GetGenericArguments()[0]);
+                serializer = (IAsyncEnumerableStreamSerializer?)Activator.CreateInstance(serializerType);
+
+                _asyncEnumerableStreamSerializers.TryAdd(objectType, serializer);
+            }
+
+            return serializer;
         }
     }
 }
