@@ -31,3 +31,8 @@ jobs:
       run: dotnet nuget push src/Ndjson.AsyncStreams.Net.Http/bin/Release/Ndjson.AsyncStreams.Net.Http.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+    - name: Publish Documentation
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages
+        folder: docs/Ndjson.AsyncStreams.DocFx/wwwroot
