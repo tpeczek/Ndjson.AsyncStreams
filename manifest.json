@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/tpecz/GitHub/Ndjson.AsyncStreams/docs/Ndjson.AsyncStreams.DocFx",
+  "source_base_path": "/home/runner/work/Ndjson.AsyncStreams/Ndjson.AsyncStreams/docs/Ndjson.AsyncStreams.DocFx",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -12,7 +12,7 @@
           "hash": "tieyC7tu1wg75Mc9Y9aym7CFmjjl6Z669EAYRTj7S2g="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "bxpJxrr3XjSFe/5N6QRnr8aG3lYHyuC+Z2DFEpsKaII="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -36,7 +36,7 @@
           "hash": "NOooRaazYKYfQcss1EGdNyL3LYGqNeU1EUgzJ6/0icw="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "I/M91bQ2/bxr6FccjLZ/paiPi5KFvmt7IXYs4IYxIOk="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -60,7 +60,7 @@
           "hash": "FBP+XmfkvQ7TjlOZKBlrjJSfYgMjr0xm4661+gqGvMM="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -72,7 +72,19 @@
           "hash": "L+PdjLKeQtMR4aO5xaNdfLGg5VZLQ1es4XySNAgI4Ro="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonOutputFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonOutputFormatter.html",
+          "hash": "btI9nPu05ma35dadv7BcC+hFjE/rQzOUZBmlSdVTw2c="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.html",
-          "hash": "aNU+nhn2bIFlIDz8aU5AG0IVDDfxwOaUiyL91h9NioQ="
+          "hash": "ELRYDrrb0sQul+VbA7tK/zGQ4HfpwaafCxlWLkWJFe0="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -96,7 +108,7 @@
           "hash": "jTn/Ju5xYm/4anbW5kn/7OEiLPqCMbNqAEfY8dX60vg="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -108,7 +120,7 @@
           "hash": "rvQ7XUjUo3GXye+Id5X/rSxzohHNMYlokR/Jzl/1F7w="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -120,7 +132,7 @@
           "hash": "CRFI/+QPAsvd6JcaV0u4Yg2SVBAg+Zw2dg48dYNfcrA="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -132,7 +144,19 @@
           "hash": "QB0X6TSjAfa9BFAogPkcEhaxa0QIJmnqn2ENo3gvNdQ="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonOutputFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonOutputFormatter.html",
+          "hash": "8RvREdfKZzDliO2D2fB+cUEXujo5k0kaax7libGcIHk="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -141,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.html",
-          "hash": "9kjbYRGoSSQge9CU2yYHd15jUUSP695yV8z231nwR3Q="
+          "hash": "XEdrfRRrt40t0yp2BpKPMlS0RNsK/d3CReqyKVf3VTU="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -156,7 +180,7 @@
           "hash": "cXjj2vwEC/7q6djEuHhSMN6A4MD/seQADAXJQD05qII="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -168,7 +192,7 @@
           "hash": "7jnPj08C1Vsq+aYA2oIzOptx+XF0Jq5kWIwmFh9PikE="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -180,7 +204,7 @@
           "hash": "k+OZN227M7+YW5Zf1HujKf3NY9VX1xy2gcIvqOdfs/c="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -192,7 +216,7 @@
           "hash": "4AlSdoqxrN1xi11ml+sV8fv0t7clV9Aokmv4VqAWoLE="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -204,7 +228,7 @@
           "hash": "dqxKkJu1WJSN7dadOlUDkduANtZ8UwLrpfPB9hoZSQg="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "LcX7bn+A/5Oz8CyiKaO/afg1SeR8jnU5XNANm9vJm4I="
+          "hash": "jqSY7sQMveZOOnwzATQti5HWRe6r220vEf79epQQHy8="
         }
       },
       "is_incremental": false,
@@ -225,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "5ziqR90aDSacAROwZM9QV0Y0x8C4GxR/bZOHsmWJ8iM="
+          "hash": "M1sq/98NWCbyWV/9kQY0HUyK6EXOeNA9ot/ECmyaibU="
         }
       },
       "is_incremental": false,
@@ -272,23 +296,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 1,
-          "skipped_file_count": 1
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 17,
-          "skipped_file_count": 17
+          "total_file_count": 19,
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
@@ -308,8 +334,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
