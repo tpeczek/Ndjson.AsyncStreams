@@ -28,10 +28,10 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release --no-build
     - name: NuGet Push Ndjson.AsyncStreams.AspNetCore.Mvc
-      run: dotnet nuget push Ndjson.AsyncStreams.AspNetCore.Mvc.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
+      run: dotnet nuget push src/Ndjson.AsyncStreams.AspNetCore.Mvc/bin/Release/Ndjson.AsyncStreams.AspNetCore.Mvc.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
     - name: NuGet Push Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson
-      run: dotnet nuget push Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
+      run: dotnet nuget push src/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson/bin/Release/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
