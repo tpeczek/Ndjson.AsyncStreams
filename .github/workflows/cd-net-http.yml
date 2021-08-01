@@ -4,7 +4,7 @@ on:
     tags:
     - "net-http-v[0-9]+.[0-9]+.[0-9]+"
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout

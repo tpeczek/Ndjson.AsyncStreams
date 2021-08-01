@@ -1,13 +1,7 @@
-name: Ndjson.AsyncStreams - CI
-on:
-  push:
-    branches:
-    - main
-  pull_request:
-    branches:
-    - main
+name: Ndjson.AsyncStreams.DocFx
+on: workflow_dispatch
 jobs:
-  integration:
+  publish:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -24,5 +18,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --configuration Release --no-build
+    - name: Publish
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages
+        folder: docs/Ndjson.AsyncStreams.DocFx/wwwroot
