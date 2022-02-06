@@ -1,4 +1,4 @@
-﻿# Ndjson.AsyncStreams
+# Ndjson.AsyncStreams
 
 Ndjson.AsyncStreams is a solution for working with asynchronous streaming data sources over HTTP using NDJSON (Newline Delimited JSON).
 
