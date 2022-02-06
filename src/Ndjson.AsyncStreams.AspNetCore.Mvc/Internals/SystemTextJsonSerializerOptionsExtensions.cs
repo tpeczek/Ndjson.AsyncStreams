@@ -13,7 +13,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
         };
 #endif
 
-#if NET5_0
+#if NET5_0 || NET6_0
         private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new(JsonSerializerDefaults.Web);
 #endif
 
@@ -42,7 +42,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
             }
 #endif
 
-#if NET5_0
+#if NET5_0 || NET6_0
             var copiedOptions = new JsonSerializerOptions(serializerOptions);
 #endif
             copiedOptions.Encoder = encoder;

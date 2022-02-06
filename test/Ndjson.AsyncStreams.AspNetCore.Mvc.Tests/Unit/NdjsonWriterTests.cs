@@ -41,7 +41,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit
             };
 #endif
 
-#if NET5_0
+#if NET5_0 || NET6_0
             JsonSerializerOptions jsonSerializerOptions = new(JsonSerializerDefaults.Web);
 #endif
 

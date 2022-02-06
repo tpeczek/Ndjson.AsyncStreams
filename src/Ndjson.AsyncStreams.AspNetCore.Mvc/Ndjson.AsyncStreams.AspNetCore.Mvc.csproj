@@ -3,7 +3,7 @@
     <Description>Ndjson.AsyncStreams.AspNetCore.Mvc is a solution for working with asynchronous streaming data sources in ASP.NET Core MVC using NDJSON (Newline Delimited JSON).</Description>
     <VersionPrefix>1.2.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
-    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
     <AssemblyTitle>Ndjson.AsyncStreams.AspNetCore.Mvc</AssemblyTitle>
     <AssemblyName>Ndjson.AsyncStreams.AspNetCore.Mvc</AssemblyName>
     <PackageId>Ndjson.AsyncStreams.AspNetCore.Mvc</PackageId>

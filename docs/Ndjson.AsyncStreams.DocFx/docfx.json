@@ -14,7 +14,7 @@
       ],
       "dest": "api",
       "properties": {
-        "TargetFramework": "net5.0"
+        "TargetFramework": "net6.0"
       }
     }
   ],
@@ -39,7 +39,7 @@
     "dest": "wwwroot",
     "globalMetadata": {
       "_appTitle": "Ndjson.AsyncStreams",
-      "_appFooter": "Copyright © 2021 Tomasz Pêczek",
+      "_appFooter": "Copyright © 2021 - 2022 Tomasz Pêczek",
       "_appLogoPath": "resources/svg/logo.svg",
       "_appFaviconPath": "resources/ico/favicon.ico",
       "_disableBreadcrumb": true,
