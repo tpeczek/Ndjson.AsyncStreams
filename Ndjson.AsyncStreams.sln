@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31402.337
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{55EFE6F9-33D5-4153-B1DE-5672827DEB08}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,6 +23,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{3E0EBFB8-5167-4F4F-8A0F-C013D23D5238}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ndjson.AsyncStreams.DocFx", "docs\Ndjson.AsyncStreams.DocFx\Ndjson.AsyncStreams.DocFx.csproj", "{96123E46-1C81-4810-B710-FD4B1F08E582}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B535868B-C064-4A28-8E59-69081385AB1B}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

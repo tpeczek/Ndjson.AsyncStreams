@@ -4,6 +4,7 @@
     <Authors>Tomasz Pęczek</Authors>
     <PackageProjectUrl>https://github.com/tpeczek/Ndjson.AsyncStreams</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/tpeczek/Ndjson.AsyncStreams</RepositoryUrl>
     <GenerateAssemblyTitleAttribute>true</GenerateAssemblyTitleAttribute>
@@ -17,5 +18,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All"/>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>
