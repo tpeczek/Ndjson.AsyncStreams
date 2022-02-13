@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Text.Encodings.Web;
 using System.Collections.Generic;
@@ -20,12 +21,12 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
     {
         private interface IAsyncEnumerableStreamSerializer
         {
-            Task SerializeAsync(object? asyncEnumerable, Stream writeStream, JsonSerializerOptions jsonSerializerOptions);
+            Task SerializeAsync(object? asyncEnumerable, Stream writeStream, JsonSerializerOptions jsonSerializerOptions, CancellationToken cancellationToken);
         }
 
         private class AsyncEnumerableStreamSerializer<T> : IAsyncEnumerableStreamSerializer
         {
-            public async Task SerializeAsync(object? asyncEnumerable, Stream writeStream, JsonSerializerOptions jsonSerializerOptions)
+            public async Task SerializeAsync(object? asyncEnumerable, Stream writeStream, JsonSerializerOptions jsonSerializerOptions, CancellationToken cancellationToken)
             {
                 IAsyncEnumerable<T>? values = asyncEnumerable as IAsyncEnumerable<T>;
                 if (values is null)
@@ -35,9 +36,9 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
 
                 using INdjsonWriter<T> ndjsonTextWriter = new SystemTextNdjsonWriter<T>(writeStream, jsonSerializerOptions);
 
-                await foreach (T value in values)
+                await foreach (T value in values.WithCancellation(cancellationToken))
                 {
-                    await ndjsonTextWriter.WriteAsync(value);
+                    await ndjsonTextWriter.WriteAsync(value, cancellationToken);
                 }
             }
         }
@@ -103,7 +104,11 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
 
             context.HttpContext.DisableResponseBuffering();
 
-            await serializer.SerializeAsync(context.Object, context.HttpContext.Response.Body, SerializerOptions);
+            try
+            {
+                await serializer.SerializeAsync(context.Object, context.HttpContext.Response.Body, SerializerOptions, context.HttpContext.RequestAborted);
+            }
+            catch (OperationCanceledException) when (context.HttpContext.RequestAborted.IsCancellationRequested) { }
         }
 
         private IAsyncEnumerableStreamSerializer? GetSerializer(Type? objectType)

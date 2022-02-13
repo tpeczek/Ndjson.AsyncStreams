@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Buffers;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
@@ -20,12 +21,12 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
     {
         private interface IAsyncEnumerableStreamSerializer
         {
-            Task SerializeAsync(object? asyncEnumerable, TextWriter textResponseStreamWriter, JsonSerializerSettings jsonSerializerSettings, NewtonsoftNdjsonArrayPool jsonArrayPool);
+            Task SerializeAsync(object? asyncEnumerable, TextWriter textResponseStreamWriter, JsonSerializerSettings jsonSerializerSettings, NewtonsoftNdjsonArrayPool jsonArrayPool, CancellationToken cancellationToken);
         }
 
         private class AsyncEnumerableStreamSerializer<T> : IAsyncEnumerableStreamSerializer
         {
-            public async Task SerializeAsync(object? asyncEnumerable, TextWriter textResponseStreamWriter, JsonSerializerSettings jsonSerializerSettings, NewtonsoftNdjsonArrayPool jsonArrayPool)
+            public async Task SerializeAsync(object? asyncEnumerable, TextWriter textResponseStreamWriter, JsonSerializerSettings jsonSerializerSettings, NewtonsoftNdjsonArrayPool jsonArrayPool, CancellationToken cancellationToken)
             {
                 IAsyncEnumerable<T>? values = asyncEnumerable as IAsyncEnumerable<T>;
                 if (values is null)
@@ -35,9 +36,9 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
 
                 using INdjsonWriter<T> ndjsonTextWriter = new NewtonsoftNdjsonWriter<T>(textResponseStreamWriter, jsonSerializerSettings, jsonArrayPool);
 
-                await foreach (T value in values)
+                await foreach (T value in values.WithCancellation(cancellationToken))
                 {
-                    await ndjsonTextWriter.WriteAsync(value);
+                    await ndjsonTextWriter.WriteAsync(value, cancellationToken);
                 }
             }
         }
@@ -108,10 +109,13 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
 
             context.HttpContext.DisableResponseBuffering();
 
-            await using (TextWriter textResponseStreamWriter = context.WriterFactory(context.HttpContext.Response.Body, selectedEncoding))
+            await using TextWriter textResponseStreamWriter = context.WriterFactory(context.HttpContext.Response.Body, selectedEncoding);
+
+            try
             {
-                await serializer.SerializeAsync(context.Object, textResponseStreamWriter, SerializerSettings, _jsonArrayPool);
+                await serializer.SerializeAsync(context.Object, textResponseStreamWriter, SerializerSettings, _jsonArrayPool, context.HttpContext.RequestAborted);
             }
+            catch (OperationCanceledException) when (context.HttpContext.RequestAborted.IsCancellationRequested) { }
         }
 
         private IAsyncEnumerableStreamSerializer? GetSerializer(Type? objectType)

@@ -52,11 +52,15 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc
 
             INdjsonWriterFactory ndjsonTextWriterFactory = context.HttpContext.RequestServices.GetRequiredService<INdjsonWriterFactory>();
             using INdjsonWriter<T> ndjsonTextWriter = ndjsonTextWriterFactory.CreateWriter<T>(context, this);
-            
-            await foreach (T value in _values)
+
+            try
             {
-                await ndjsonTextWriter.WriteAsync(value);
+                await foreach (T value in _values.WithCancellation(context.HttpContext.RequestAborted))
+                {
+                    await ndjsonTextWriter.WriteAsync(value, context.HttpContext.RequestAborted);
+                }
             }
+            catch (OperationCanceledException) when (context.HttpContext.RequestAborted.IsCancellationRequested) { }
         }
     }
 }
