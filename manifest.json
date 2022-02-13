@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonOutputFormatter.html",
-          "hash": "Xx8aNuzYb1rzON0zQykAwv3qgKD0dngpNXU43mbcgy0="
+          "hash": "LhfjOjCh+js32wcwpBiMrY2pPgrsrTrQVu3TJo7sruU="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonOutputFormatter.html",
-          "hash": "cGOQrmp5KY+6ALIWTWlG9kNkLxGnUSIgT1zA9lKVFGw="
+          "hash": "bqwZfxKwFunUlnhTrztUhv47Ht88KmJQMuEkJBVeOY4="
         }
       },
       "is_incremental": false,
