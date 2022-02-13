@@ -28,12 +28,12 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
                 return ReadModelInternal(inputStream, serializerSettings);
             }
 
-            private static async IAsyncEnumerable<T> ReadModelInternal(Stream inputStream, JsonSerializerSettings serializerSettings)
+            private static async IAsyncEnumerable<T?> ReadModelInternal(Stream inputStream, JsonSerializerSettings serializerSettings)
             {
                 using StreamReader inputStreamReader = new(inputStream);
 
                 string? valueUtf8Json = await inputStreamReader.ReadLineAsync();
-                while (!(valueUtf8Json is null))
+                while (valueUtf8Json is not null)
                 {
                     yield return JsonConvert.DeserializeObject<T>(valueUtf8Json, serializerSettings);
 

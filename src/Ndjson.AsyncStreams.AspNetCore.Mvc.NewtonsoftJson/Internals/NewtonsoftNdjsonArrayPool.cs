@@ -18,9 +18,9 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Internals
             return _inner.Rent(minimumLength);
         }
 
-        public void Return(char[] array)
+        public void Return(char[]? array)
         {
-            if (array == null)
+            if (array is null)
             {
                 throw new ArgumentNullException(nameof(array));
             }

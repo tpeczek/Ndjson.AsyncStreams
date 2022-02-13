@@ -7,8 +7,8 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
     {
         public static void DisableResponseBuffering(this HttpContext context)
         {
-            IHttpResponseBodyFeature responseBodyFeature = context.Features.Get<IHttpResponseBodyFeature>();
-            if (responseBodyFeature != null)
+            IHttpResponseBodyFeature? responseBodyFeature = context.Features.Get<IHttpResponseBodyFeature>();
+            if (responseBodyFeature is not null)
             {
                 responseBodyFeature.DisableBuffering();
             }

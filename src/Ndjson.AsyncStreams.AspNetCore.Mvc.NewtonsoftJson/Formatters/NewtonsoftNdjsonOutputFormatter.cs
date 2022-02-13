@@ -81,13 +81,13 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
         }
 
         /// <inheritdoc />
-        protected override bool CanWriteType(Type type)
+        protected override bool CanWriteType(Type? type)
         {
-            return type.IsGenericType && (type.GetGenericTypeDefinition() == _asyncEnumerableType);
+            return (type is not null) && type.IsGenericType && (type.GetGenericTypeDefinition() == _asyncEnumerableType);
         }
 
         /// <inheritdoc />
-        public override async Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+        public override async Task WriteResponseBodyAsync(OutputFormatterWriteContext? context, Encoding? selectedEncoding)
         {
             if (context is null)
             {
@@ -114,10 +114,11 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
             }
         }
 
-        private IAsyncEnumerableStreamSerializer? GetSerializer(Type objectType)
+        private IAsyncEnumerableStreamSerializer? GetSerializer(Type? objectType)
         {
-            IAsyncEnumerableStreamSerializer? serializer;
-            if (!_asyncEnumerableStreamSerializers.TryGetValue(objectType, out serializer))
+            IAsyncEnumerableStreamSerializer? serializer = null;
+
+            if ((objectType is not null) && !_asyncEnumerableStreamSerializers.TryGetValue(objectType, out serializer))
             {
                 Type serializerType = typeof(AsyncEnumerableStreamSerializer<>).MakeGenericType(objectType.GetGenericArguments()[0]);
                 serializer = (IAsyncEnumerableStreamSerializer?)Activator.CreateInstance(serializerType);
