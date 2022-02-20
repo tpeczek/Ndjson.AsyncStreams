@@ -34,7 +34,7 @@ namespace Ndjson.AsyncStreams.Net.Http
         /// <param name="options">Options to control the behavior during deserialization.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public static async IAsyncEnumerable<T> ReadFromNdjsonAsync<T>(this HttpContent content, JsonSerializerOptions? options = null, [EnumeratorCancellation] CancellationToken cancellationToken = default)
+        public static async IAsyncEnumerable<T?> ReadFromNdjsonAsync<T>(this HttpContent content, JsonSerializerOptions? options = null, [EnumeratorCancellation] CancellationToken cancellationToken = default)
         {
             if (content is null)
             {
@@ -55,7 +55,7 @@ namespace Ndjson.AsyncStreams.Net.Http
             using StreamReader contentStreamReader = new (contentStream);
 
             string? valueUtf8Json = await contentStreamReader.ReadLineAsync().ConfigureAwait(false);
-            while (!(valueUtf8Json is null))
+            while (valueUtf8Json is not null)
             {
                 yield return JsonSerializer.Deserialize<T>(valueUtf8Json, jsonSerializerOptions);
 
