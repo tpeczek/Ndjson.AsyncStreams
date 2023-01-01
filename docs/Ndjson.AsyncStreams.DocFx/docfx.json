@@ -39,7 +39,7 @@
     "dest": "wwwroot",
     "globalMetadata": {
       "_appTitle": "Ndjson.AsyncStreams",
-      "_appFooter": "Copyright © 2021 - 2022 Tomasz Pęczek",
+      "_appFooter": "Copyright © 2021 - 2023 Tomasz Pęczek",
       "_appLogoPath": "resources/svg/logo.svg",
       "_appFaviconPath": "resources/ico/favicon.ico",
       "_disableBreadcrumb": true,

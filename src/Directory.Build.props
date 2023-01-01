@@ -1,6 +1,6 @@
 <Project>
  <PropertyGroup>
-    <Copyright>Copyright © 2021 - 2022 Tomasz Pęczek</Copyright>
+    <Copyright>Copyright © 2021 - 2023 Tomasz Pęczek</Copyright>
     <Authors>Tomasz Pęczek</Authors>
     <PackageProjectUrl>https://github.com/tpeczek/Ndjson.AsyncStreams</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
