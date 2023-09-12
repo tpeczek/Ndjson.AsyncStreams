@@ -630,6 +630,15 @@ references:
   fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).SerializeToStreamAsync(Stream, System.Nullable(Of TransportContext))
   nameWithType: NdjsonAsyncEnumerableContent<T>.SerializeToStreamAsync(Stream, Nullable<TransportContext>)
   nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).SerializeToStreamAsync(Stream, Nullable(Of TransportContext))
+- uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.SerializeToStreamAsync(Stream,System.Nullable{TransportContext},CancellationToken)
+  name: SerializeToStreamAsync(Stream, Nullable<TransportContext>, CancellationToken)
+  href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1_SerializeToStreamAsync_Stream_System_Nullable_TransportContext__CancellationToken_
+  commentId: M:Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.SerializeToStreamAsync(Stream,System.Nullable{TransportContext},CancellationToken)
+  name.vb: SerializeToStreamAsync(Stream, Nullable(Of TransportContext), CancellationToken)
+  fullName: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent<T>.SerializeToStreamAsync(Stream, System.Nullable<TransportContext>, CancellationToken)
+  fullName.vb: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent(Of T).SerializeToStreamAsync(Stream, System.Nullable(Of TransportContext), CancellationToken)
+  nameWithType: NdjsonAsyncEnumerableContent<T>.SerializeToStreamAsync(Stream, Nullable<TransportContext>, CancellationToken)
+  nameWithType.vb: NdjsonAsyncEnumerableContent(Of T).SerializeToStreamAsync(Stream, Nullable(Of TransportContext), CancellationToken)
 - uid: Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent`1.SerializeToStreamAsync*
   name: SerializeToStreamAsync
   href: api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html#Ndjson_AsyncStreams_Net_Http_NdjsonAsyncEnumerableContent_1_SerializeToStreamAsync_

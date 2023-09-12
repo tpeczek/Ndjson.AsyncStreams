@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcBuilderExtensions.html",
-          "hash": "KRjM/1Jy/1g+E+AoK/jEFIhnyH01Q+F8QewUx6zXixc="
+          "hash": "7DldIHnEeGTITr3YUMQKR1S3kNaYuMxFSRs9TN2SKdU="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.NewtonsoftNdjsonMvcCoreBuilderExtensions.html",
-          "hash": "mc2iqjLDZsx51XlAegSsH1otKm+AOaXQXyXy+Ga0ZmU="
+          "hash": "3wABbsr+CMiqYcH65KHmuLiEndN6nPA4xrRX6zYWtxQ="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcBuilderExtensions.html",
-          "hash": "TrmzsuclqRIS4Xrmsm3pceVIowTgsp6bGrkRlOM3qOI="
+          "hash": "ZHI1F5apdoYG9VjUn7mUO53T2lF2AxXS63q95l9vGms="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.SystemTextNdjsonMvcCoreBuilderExtensions.html",
-          "hash": "UkbuJH2k7bxipVzl1f6GxtFzAOtMg7aaIQ5UVCPzhhI="
+          "hash": "dVyUr2NpjDjM5tqYBF7rEH41U7D2MeYo1phPHMWu3KM="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Microsoft.Extensions.DependencyInjection.html",
-          "hash": "XyJj4G60R3IPJ68eIU0AR8xebyL/vKvdabiFxAsUniY="
+          "hash": "JtG8YqePcRZz48gkE09vNPgKUvRCKouv6yYJwDFm/UU="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonInputFormatter.html",
-          "hash": "eFY1oXV4GNpKWWViiTD/kw3M1eKlIpcZ1T5wC1w4Q0c="
+          "hash": "sDg+V/CdZ8Cw9rs9yVPB1BlBwn5feNdU/+Wgp1bI+mI="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.SystemTextNdjsonOutputFormatter.html",
-          "hash": "LhfjOjCh+js32wcwpBiMrY2pPgrsrTrQVu3TJo7sruU="
+          "hash": "2+mrKJ4ePp3LmzFmP4SI+rKTAOWdxkhgVM2dGYmhhSQ="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters.html",
-          "hash": "PsfSnGKAokcmQHBZEZV4OfgiasQrGDBK4XfCKAoyd4U="
+          "hash": "U3Dd9F4a3NYWryQybF3mlQV73j268E1ipwEFJ5j8hog="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriter-1.html",
-          "hash": "+uyl6qsmXtxptYVbtbv08pGN4QGlCh/T1RbNMUgXjMo="
+          "hash": "jyrDFLTSkoEVuMjWRrknV8wCqHmlFaa8vu4z+H3WRCE="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.INdjsonWriterFactory.html",
-          "hash": "OO+n/aWiiAN/F4HrsZ0x0nRJ/IkWkSLrwfnvwtF+ZnE="
+          "hash": "2Hv65TIS0UbnOcG+xGkPLFo+Jn0XO4qR/2NlQLGSKRo="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NdjsonAsyncEnumerableResult-1.html",
-          "hash": "uMvk6oqQHphD6Ioc9ywq5HPDhZiDnIWr5xQphjpqD7k="
+          "hash": "0WgCxR2IITQHArf6s0HsYyUTcKchxMEwrIZAh6XZNPY="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonInputFormatter.html",
-          "hash": "P53u0ltLwl9KbLUSYF7rssf2Vlt3tQcnEnq5jvPVPk0="
+          "hash": "4y2gB2SJRY+sbIb6dyoKUwefYoeQ5bgQTxiJqRPD46I="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.NewtonsoftNdjsonOutputFormatter.html",
-          "hash": "bqwZfxKwFunUlnhTrztUhv47Ht88KmJQMuEkJBVeOY4="
+          "hash": "c0qxc77W9EQOkeQZsTYSBScH9IW2vtUe7n/cppAibuk="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters.html",
-          "hash": "kpTNz1vKe098OcsTLrr/M8PCvTw+/vAl/UM6gf2xX9w="
+          "hash": "YlMGgBhTM0yHafP4SYJWT2TEnoHxEsExpVyAECfzYRk="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.AspNetCore.Mvc.html",
-          "hash": "xZbIOSUKFSNqrlc4cBrnksELgEWXinReQrqSY8QbOYU="
+          "hash": "wygov+pZRuXi+qDWHmwf++I+Wgi/iJ2ptRYvyU/Rg4s="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.Net.Http.HttpClientNdjsonExtensions.html",
-          "hash": "kqlEiCpIosxbk4IcieedkH4Zc7KtQAXaT7C0jX0dU8s="
+          "hash": "1xcX5Te/1ouec4KSxPfI6tk9aqS+3KffPYT2RI8di8g="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.Net.Http.HttpContentNdjsonExtensions.html",
-          "hash": "a8EPGfdVb1YKBFtuu8l/UcBEa9IFPJWjVCzYKb/Ae+0="
+          "hash": "7sTlDvYD5Ft17hncNzRVWG5ZBZGJPqLPHvDCNFPDzZk="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.Net.Http.NdjsonAsyncEnumerableContent-1.html",
-          "hash": "qoXVvs+U+44krNjJLs4KJC66tkV0iSN1vsDnAhr8jEE="
+          "hash": "OZ8svl6jvbpfnmjfQVBYZW/p477zZRXhlFpoW9kN9YE="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Ndjson.AsyncStreams.Net.Http.html",
-          "hash": "4MnyVJnVaO8xSRedpm8h2ZrdApCDY36t57Y97cK0/Uo="
+          "hash": "5EXPoOTUI5Z3WyhubbeD3MfJ909RkpKxOvuH55t5Lag="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "7kLGApNdYLscXf5EkBGOH83bWHqgdhtBLqrfTznJ2Hw="
+          "hash": "xVWmsekkL+oQYyFN6UhX842fTgJdHrL08fLo5yKD0iY="
         }
       },
       "is_incremental": false,
