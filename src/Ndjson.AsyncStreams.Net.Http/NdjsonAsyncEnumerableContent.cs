@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
@@ -44,13 +45,19 @@ namespace Ndjson.AsyncStreams.Net.Http
         }
 
         /// <inheritdoc/>
-        protected override async Task SerializeToStreamAsync(Stream stream, TransportContext? context)
+        protected override Task SerializeToStreamAsync(Stream stream, TransportContext? context)
         {
-            await foreach (T value in Values.ConfigureAwait(false))
+            return SerializeToStreamAsync(stream, context, CancellationToken.None);
+        }
+
+        /// <inheritdoc/>
+        protected override async Task SerializeToStreamAsync(Stream stream, TransportContext? context, CancellationToken cancellationToken)
+        {
+            await foreach (T value in Values.WithCancellation(cancellationToken).ConfigureAwait(false))
             {
-                await JsonSerializer.SerializeAsync<T>(stream, value, _jsonSerializerOptions).ConfigureAwait(false);
-                await stream.WriteAsync(_newlineDelimiter).ConfigureAwait(false);
-                await stream.FlushAsync().ConfigureAwait(false);
+                await JsonSerializer.SerializeAsync<T>(stream, value, _jsonSerializerOptions, cancellationToken).ConfigureAwait(false);
+                await stream.WriteAsync(_newlineDelimiter, cancellationToken).ConfigureAwait(false);
+                await stream.FlushAsync(cancellationToken).ConfigureAwait(false);
             }
         }
 
