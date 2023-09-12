@@ -14,17 +14,7 @@ namespace Ndjson.AsyncStreams.Net.Http
     /// </summary>
     public static class HttpContentNdjsonExtensions
     {
-#if NETCOREAPP3_1
-        private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new()
-        {
-            PropertyNameCaseInsensitive = true,
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-        };
-#endif
-
-#if NET5_0 || NET6_0
         private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new(JsonSerializerDefaults.Web);
-#endif
 
         /// <summary>
         /// Reads the HTTP content and returns the async stream of values that results from deserializing the content as NDJSON in an asynchronous operation.
@@ -51,15 +41,16 @@ namespace Ndjson.AsyncStreams.Net.Http
 
             JsonSerializerOptions jsonSerializerOptions = options ?? _defaultJsonSerializerOptions;
 
-            using Stream contentStream = await content.ReadAsStreamAsync().ConfigureAwait(false);
+            using Stream contentStream = await content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
             using StreamReader contentStreamReader = new (contentStream);
 
-            string? valueUtf8Json = await contentStreamReader.ReadLineAsync().ConfigureAwait(false);
+            string? valueUtf8Json = await contentStreamReader.ReadLineAsync(cancellationToken).ConfigureAwait(false);
+
             while (valueUtf8Json is not null)
             {
                 yield return JsonSerializer.Deserialize<T>(valueUtf8Json, jsonSerializerOptions);
 
-                valueUtf8Json = await contentStreamReader.ReadLineAsync().ConfigureAwait(false);
+                valueUtf8Json = await contentStreamReader.ReadLineAsync(cancellationToken).ConfigureAwait(false);
             }
         }
 

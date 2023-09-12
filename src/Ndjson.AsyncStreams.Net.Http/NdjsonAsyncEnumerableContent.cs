@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
@@ -17,18 +18,7 @@ namespace Ndjson.AsyncStreams.Net.Http
     public class NdjsonAsyncEnumerableContent<T> : HttpContent
     {
         private static readonly byte[] _newlineDelimiter = Encoding.UTF8.GetBytes("\n");
-
-#if NETCOREAPP3_1
-        private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new()
-        {
-            PropertyNameCaseInsensitive = true,
-            PropertyNamingPolicy = JsonNamingPolicy .CamelCase
-        };
-#endif
-
-#if NET5_0 || NET6_0
         private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new(JsonSerializerDefaults.Web);
-#endif
 
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 
@@ -55,13 +45,19 @@ namespace Ndjson.AsyncStreams.Net.Http
         }
 
         /// <inheritdoc/>
-        protected override async Task SerializeToStreamAsync(Stream stream, TransportContext? context)
+        protected override Task SerializeToStreamAsync(Stream stream, TransportContext? context)
         {
-            await foreach (T value in Values.ConfigureAwait(false))
+            return SerializeToStreamAsync(stream, context, CancellationToken.None);
+        }
+
+        /// <inheritdoc/>
+        protected override async Task SerializeToStreamAsync(Stream stream, TransportContext? context, CancellationToken cancellationToken)
+        {
+            await foreach (T value in Values.WithCancellation(cancellationToken).ConfigureAwait(false))
             {
-                await JsonSerializer.SerializeAsync<T>(stream, value, _jsonSerializerOptions).ConfigureAwait(false);
-                await stream.WriteAsync(_newlineDelimiter).ConfigureAwait(false);
-                await stream.FlushAsync().ConfigureAwait(false);
+                await JsonSerializer.SerializeAsync<T>(stream, value, _jsonSerializerOptions, cancellationToken).ConfigureAwait(false);
+                await stream.WriteAsync(_newlineDelimiter, cancellationToken).ConfigureAwait(false);
+                await stream.FlushAsync(cancellationToken).ConfigureAwait(false);
             }
         }
 
