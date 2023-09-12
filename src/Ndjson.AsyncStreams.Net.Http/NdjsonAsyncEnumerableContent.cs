@@ -17,18 +17,7 @@ namespace Ndjson.AsyncStreams.Net.Http
     public class NdjsonAsyncEnumerableContent<T> : HttpContent
     {
         private static readonly byte[] _newlineDelimiter = Encoding.UTF8.GetBytes("\n");
-
-#if NETCOREAPP3_1
-        private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new()
-        {
-            PropertyNameCaseInsensitive = true,
-            PropertyNamingPolicy = JsonNamingPolicy .CamelCase
-        };
-#endif
-
-#if NET5_0 || NET6_0
         private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new(JsonSerializerDefaults.Web);
-#endif
 
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 

@@ -14,17 +14,7 @@ namespace Ndjson.AsyncStreams.Net.Http
     /// </summary>
     public static class HttpContentNdjsonExtensions
     {
-#if NETCOREAPP3_1
-        private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new()
-        {
-            PropertyNameCaseInsensitive = true,
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-        };
-#endif
-
-#if NET5_0 || NET6_0
         private static readonly JsonSerializerOptions _defaultJsonSerializerOptions = new(JsonSerializerDefaults.Web);
-#endif
 
         /// <summary>
         /// Reads the HTTP content and returns the async stream of values that results from deserializing the content as NDJSON in an asynchronous operation.
@@ -50,32 +40,17 @@ namespace Ndjson.AsyncStreams.Net.Http
             }
 
             JsonSerializerOptions jsonSerializerOptions = options ?? _defaultJsonSerializerOptions;
-#if NETCOREAPP3_1
-            using Stream contentStream = await content.ReadAsStreamAsync().ConfigureAwait(false);
-#endif
-#if NET5_0 || NET6_0
+
             using Stream contentStream = await content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-#endif
             using StreamReader contentStreamReader = new (contentStream);
 
-
-#if NETCOREAPP3_1  || NET5_0
-            string? valueUtf8Json = await contentStreamReader.ReadLineAsync().ConfigureAwait(false);
-#endif
-#if NET6_0
-            string? valueUtf8Json = await contentStreamReader.ReadLineAsync().WaitAsync(cancellationToken).ConfigureAwait(false);
-#endif
+            string? valueUtf8Json = await contentStreamReader.ReadLineAsync(cancellationToken).ConfigureAwait(false);
 
             while (valueUtf8Json is not null)
             {
                 yield return JsonSerializer.Deserialize<T>(valueUtf8Json, jsonSerializerOptions);
 
-#if NETCOREAPP3_1 || NET5_0
-                valueUtf8Json = await contentStreamReader.ReadLineAsync().ConfigureAwait(false);
-#endif
-#if NET6_0
-                valueUtf8Json = await contentStreamReader.ReadLineAsync().WaitAsync(cancellationToken).ConfigureAwait(false);
-#endif
+                valueUtf8Json = await contentStreamReader.ReadLineAsync(cancellationToken).ConfigureAwait(false);
             }
         }
 
