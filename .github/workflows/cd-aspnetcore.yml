@@ -1,11 +1,16 @@
-name: Ndjson.AsyncStreams.DocFx
-on: workflow_dispatch
+name: Ndjson.AsyncStreams.AspNetCore - CD
+on:
+  push:
+    tags:
+    - "aspnetcore-v[0-9]+.[0-9]+.[0-9]+"
 jobs:
-  publish:
+  deployment:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+    - name: Extract VERSION
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/aspnetcore-v/}" >> $GITHUB_ENV
     - name: Setup .NET Core 3.1 SDK
       uses: actions/setup-dotnet@v3
       with:
@@ -30,7 +35,15 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Publish
+    - name: Test
+      run: dotnet test --configuration Release --no-build
+    - name: Pack
+      run: dotnet pack --configuration Release --no-build
+    - name: NuGet Push Ndjson.AsyncStreams.AspNetCore
+      run: dotnet nuget push src/Ndjson.AsyncStreams.AspNetCore/bin/Release/Ndjson.AsyncStreams.AspNetCore.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+    - name: Publish Documentation
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages

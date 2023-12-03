@@ -4,10 +4,14 @@ Ndjson.AsyncStreams is a solution for working with asynchronous streaming data s
 
 ## Installation
 
-You can install [Ndjson.AsyncStreams.Net.Http](https://www.nuget.org/packages/Ndjson.AsyncStreams.Net.Http), and [Ndjson.AsyncStreams.AspNetCore.Mvc](https://www.nuget.org/packages/Ndjson.AsyncStreams.AspNetCore.Mvc) from NuGet.
+You can install [Ndjson.AsyncStreams.Net.Http](https://www.nuget.org/packages/Ndjson.AsyncStreams.Net.Http), [Ndjson.AsyncStreams.AspNetCore](https://www.nuget.org/packages/Ndjson.AsyncStreams.AspNetCore), or [Ndjson.AsyncStreams.AspNetCore.Mvc](https://www.nuget.org/packages/Ndjson.AsyncStreams.AspNetCore.Mvc) from NuGet.
 
 ```
 PM>  Install-Package Ndjson.AsyncStreams.Net.Http
+```
+
+```
+PM>  Install-Package Ndjson.AsyncStreams.AspNetCore
 ```
 
 ```

@@ -5,6 +5,7 @@
         {
           "files": [
             "src/Ndjson.AsyncStreams.Net.Http/Ndjson.AsyncStreams.Net.Http.csproj",
+            "src/Ndjson.AsyncStreams.AspNetCore/Ndjson.AsyncStreams.AspNetCore.csproj",
             "src/Ndjson.AsyncStreams.AspNetCore.Mvc/Ndjson.AsyncStreams.AspNetCore.Mvc.csproj",
             "src/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.csproj"
           ],
