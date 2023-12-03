@@ -16,6 +16,7 @@ public static partial class NdjsonResultExtensions
     /// <param name="stream">The async stream of values to write as NDJSON.</param>
     /// <param name="options">The serializer options to use when serializing the values.</param>
     /// <param name="statusCode">The status code to set on the response.</param>
+    /// <typeparam name="T">The type of the values in async stream to be serialized.</typeparam>
     /// <returns>The created <see cref="NdjsonAsyncEnumerableHttpResult{T}"/> that on execution will write the given <paramref name="stream"/> as NDJSON to the response.</returns>
     /// <remarks>Callers should cache an instance of serializer settings to avoid recreating cached data with each call.</remarks>
     public static IResult Ndjson<T>(this IResultExtensions resultExtensions, IAsyncEnumerable<T>? stream, JsonSerializerOptions? options = null, int? statusCode = null)
