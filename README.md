@@ -29,6 +29,6 @@ My blog and open source projects are result of my passion for software developme
 
 ## Copyright and License
 
-Copyright © 2021 - 2024 Tomasz Pęczek
+Copyright © 2021 - 2025 Tomasz Pęczek
 
 Licensed under the [MIT License](https://github.com/tpeczek/Ndjson.AsyncStreams/blob/master/LICENSE.md)
