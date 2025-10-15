@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using Xunit;
 
@@ -37,13 +38,36 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         }
 
         [Fact]
-        public void Create_MediaTypeIsNdjson()
+        public void Create_DefaultMediaType_MediaTypeIsNdjson()
         {
             IAsyncEnumerable<ValueType> values = GetValuesAsync();
 
             NdjsonAsyncEnumerableContent<ValueType> ndjsonAsyncEnumerableContent = new NdjsonAsyncEnumerableContent<ValueType>(values);
 
             Assert.Equal("application/x-ndjson", ndjsonAsyncEnumerableContent.Headers.ContentType.MediaType);
+        }
+
+        [Theory]
+        [InlineData("application/x-ndjson")]
+        [InlineData("application/jsonl")]
+        public void Create_SupportedMediaType_MediaTypeIsCorrect(string mediaType)
+        {
+            IAsyncEnumerable<ValueType> values = GetValuesAsync();
+
+            NdjsonAsyncEnumerableContent<ValueType> ndjsonAsyncEnumerableContent = new NdjsonAsyncEnumerableContent<ValueType>(values, mediaType);
+
+            Assert.Equal(mediaType, ndjsonAsyncEnumerableContent.Headers.ContentType.MediaType);
+        }
+
+        [Fact]
+        public void Create_NotSupportedMediaType_ThrowsNotSupportedException()
+        {
+            IAsyncEnumerable<ValueType> values = GetValuesAsync();
+
+            Assert.Throws<NotSupportedException>(() =>
+            {
+                NdjsonAsyncEnumerableContent<ValueType> ndjsonAsyncEnumerableContent = new NdjsonAsyncEnumerableContent<ValueType>(values, "application/json");
+            });
         }
 
         [Fact]

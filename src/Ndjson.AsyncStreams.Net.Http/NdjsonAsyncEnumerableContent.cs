@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Text.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using Ndjson.AsyncStreams.Net.Http.Internals;
 
 namespace Ndjson.AsyncStreams.Net.Http
 {
@@ -33,15 +34,29 @@ namespace Ndjson.AsyncStreams.Net.Http
         /// <param name="values">The async stream of values to be serialized.</param>
         /// <param name="options">The options to control the behavior during serialization.</param>
         public NdjsonAsyncEnumerableContent(IAsyncEnumerable<T> values, JsonSerializerOptions? options = null)
+            : this(values, MediaTypeHeaderValues.APPLICATION_NDJSON_MEDIA_TYPE, options) { }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="NdjsonAsyncEnumerableContent{T}"/> class that will contain the values async stream serialized as NDJSON.
+        /// </summary>
+        /// <param name="values">The async stream of values to be serialized.</param>
+        /// <param name="mediaType">The media type to be used.</param>
+        /// <param name="options">The options to control the behavior during serialization.</param>
+        public NdjsonAsyncEnumerableContent(IAsyncEnumerable<T> values, string mediaType, JsonSerializerOptions? options = null)
         {
             Values = values ?? throw new ArgumentNullException(nameof(values));
 
-            _jsonSerializerOptions = options ?? _defaultJsonSerializerOptions;
+            if (!MediaTypeHeaderValues.IsSupportedMediaType(mediaType))
+            {
+                throw new NotSupportedException();
+            }
 
-            Headers.ContentType = new MediaTypeHeaderValue("application/x-ndjson")
+            Headers.ContentType = new MediaTypeHeaderValue(mediaType)
             {
                 CharSet = Encoding.UTF8.WebName
             };
+
+            _jsonSerializerOptions = options ?? _defaultJsonSerializerOptions;
         }
 
         /// <inheritdoc/>

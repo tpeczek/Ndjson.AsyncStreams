@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Threading;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Ndjson.AsyncStreams.Net.Http.Internals;
 
 namespace Ndjson.AsyncStreams.Net.Http
 {
@@ -34,7 +35,7 @@ namespace Ndjson.AsyncStreams.Net.Http
             string? mediaType = content.Headers.ContentType?.MediaType;
             string? charset = content.Headers.ContentType?.CharSet;
 
-            if (!IsNdjsonMediaType(mediaType) || !IsUtf8Encoding(charset))
+            if (!MediaTypeHeaderValues.IsSupportedMediaType(mediaType) || !IsUtf8Encoding(charset))
             {
                 throw new NotSupportedException();
             }
@@ -52,16 +53,6 @@ namespace Ndjson.AsyncStreams.Net.Http
 
                 valueUtf8Json = await contentStreamReader.ReadLineAsync(cancellationToken).ConfigureAwait(false);
             }
-        }
-
-        private static bool IsNdjsonMediaType(string? mediaType)
-        {
-            if (mediaType is null)
-            {
-                return false;
-            }
-
-            return mediaType.Equals("application/x-ndjson", StringComparison.OrdinalIgnoreCase);
         }
 
         private static bool IsUtf8Encoding(string? charset)

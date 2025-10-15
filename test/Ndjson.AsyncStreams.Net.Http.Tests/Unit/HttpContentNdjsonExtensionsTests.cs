@@ -35,7 +35,7 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
         }
 
         [Fact]
-        public async Task ReadFromNdjsonAsync_MediaTypeIsNotNdjson_ThrowsNotSupportedException()
+        public async Task ReadFromNdjsonAsync_MediaTypeIsNotSupported_ThrowsNotSupportedException()
         {
             HttpContent content = new StringContent(String.Empty);
             content.Headers.ContentType.MediaType = "application/json";
@@ -60,11 +60,13 @@ namespace Ndjson.AsyncStreams.Net.Http.Tests.Unit
             });
         }
 
-        [Fact]
-        public async Task ReadFromNdjsonAsync_ReturnsCorrectValues()
+        [Theory]
+        [InlineData("application/x-ndjson")]
+        [InlineData("application/jsonl")]
+        public async Task ReadFromNdjsonAsync_ReturnsCorrectValues(string mediaType)
         {
             HttpContent content = new StringContent(NDJSON);
-            content.Headers.ContentType.MediaType = "application/x-ndjson";
+            content.Headers.ContentType.MediaType = mediaType;
             content.Headers.ContentType.CharSet = Encoding.UTF8.WebName;
 
             int valueIndex = 0;
