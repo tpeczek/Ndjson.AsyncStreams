@@ -24,7 +24,11 @@ namespace Ndjson.AsyncStreams.AspNetCore.Tests.Unit.Http.Results
         }
 
         private static readonly int STATUS_CODE = 100;
-        private static readonly string CONTENT_TYPE = new MediaTypeHeaderValue("application/x-ndjson")
+        private static readonly string NDJSON_CONTENT_TYPE = new MediaTypeHeaderValue("application/x-ndjson")
+        {
+            Encoding = Encoding.UTF8
+        }.ToString();
+        private static readonly string JSONL_CONTENT_TYPE = new MediaTypeHeaderValue("application/jsonl")
         {
             Encoding = Encoding.UTF8
         }.ToString();
@@ -49,7 +53,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Tests.Unit.Http.Results
         public async Task ExecuteAsync_StatusCodeIsProvided_SetsResponseStatusCode()
         {
             HttpContext httpContext = PrepareHttpContext();
-            NdjsonAsyncEnumerableHttpResult<ValueType> ndjsonAsyncEnumerableHttpResult = new NdjsonAsyncEnumerableHttpResult<ValueType>(StreamValuesAsync(), JSON_SERIALIZER_OPTIONS, statusCode: STATUS_CODE);
+            NdjsonAsyncEnumerableHttpResult<ValueType> ndjsonAsyncEnumerableHttpResult = new NdjsonAsyncEnumerableHttpResult<ValueType>(StreamValuesAsync(), "application/x-ndjson", JSON_SERIALIZER_OPTIONS, statusCode: STATUS_CODE);
 
             await ndjsonAsyncEnumerableHttpResult.ExecuteAsync(httpContext);
 
@@ -57,14 +61,25 @@ namespace Ndjson.AsyncStreams.AspNetCore.Tests.Unit.Http.Results
         }
 
         [Fact]
-        public async Task ExecuteAsync_ResponseContentTypeIsSetToNdjsonWithUtf8Encoding()
+        public async Task ExecuteAsync_NdjsonContentType_ResponseContentTypeIsSetToNdjsonWithUtf8Encoding()
         {
             HttpContext httpContext = PrepareHttpContext();
-            NdjsonAsyncEnumerableHttpResult<ValueType> ndjsonAsyncEnumerableHttpResult = new NdjsonAsyncEnumerableHttpResult<ValueType>(StreamValuesAsync(), JSON_SERIALIZER_OPTIONS);
+            NdjsonAsyncEnumerableHttpResult<ValueType> ndjsonAsyncEnumerableHttpResult = new NdjsonAsyncEnumerableHttpResult<ValueType>(StreamValuesAsync(), "application/x-ndjson", JSON_SERIALIZER_OPTIONS);
 
             await ndjsonAsyncEnumerableHttpResult.ExecuteAsync(httpContext);
 
-            Assert.Equal(CONTENT_TYPE, httpContext.Response.ContentType);
+            Assert.Equal(NDJSON_CONTENT_TYPE, httpContext.Response.ContentType);
+        }
+
+        [Fact]
+        public async Task ExecuteAsync_JsonlContentType_ResponseContentTypeIsSetToJsonlWithUtf8Encoding()
+        {
+            HttpContext httpContext = PrepareHttpContext();
+            NdjsonAsyncEnumerableHttpResult<ValueType> ndjsonAsyncEnumerableHttpResult = new NdjsonAsyncEnumerableHttpResult<ValueType>(StreamValuesAsync(), "application/jsonl", JSON_SERIALIZER_OPTIONS);
+
+            await ndjsonAsyncEnumerableHttpResult.ExecuteAsync(httpContext);
+
+            Assert.Equal(JSONL_CONTENT_TYPE, httpContext.Response.ContentType);
         }
 
         [Fact]
@@ -72,7 +87,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Tests.Unit.Http.Results
         {
             Mock<StreamResponseBodyFeature> httpResponseBodyFeatureMock = new(Stream.Null);
             HttpContext httpContext = PrepareHttpContext(httpResponseBodyFeatureMock.Object);
-            NdjsonAsyncEnumerableHttpResult<ValueType> ndjsonAsyncEnumerableHttpResult = new NdjsonAsyncEnumerableHttpResult<ValueType>(StreamValuesAsync(), JSON_SERIALIZER_OPTIONS);
+            NdjsonAsyncEnumerableHttpResult<ValueType> ndjsonAsyncEnumerableHttpResult = new NdjsonAsyncEnumerableHttpResult<ValueType>(StreamValuesAsync(), "application/x-ndjson", JSON_SERIALIZER_OPTIONS);
 
             await ndjsonAsyncEnumerableHttpResult.ExecuteAsync(httpContext);
 
@@ -83,7 +98,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Tests.Unit.Http.Results
         public async Task ExecuteAsync_WritesValuesAsNdjson()
         {
             HttpContext httpContext = PrepareHttpContext();
-            NdjsonAsyncEnumerableHttpResult<ValueType> ndjsonAsyncEnumerableHttpResult = new NdjsonAsyncEnumerableHttpResult<ValueType>(StreamValuesAsync(), JSON_SERIALIZER_OPTIONS);
+            NdjsonAsyncEnumerableHttpResult<ValueType> ndjsonAsyncEnumerableHttpResult = new NdjsonAsyncEnumerableHttpResult<ValueType>(StreamValuesAsync(), "application/x-ndjson", JSON_SERIALIZER_OPTIONS);
 
             await ndjsonAsyncEnumerableHttpResult.ExecuteAsync(httpContext);
 

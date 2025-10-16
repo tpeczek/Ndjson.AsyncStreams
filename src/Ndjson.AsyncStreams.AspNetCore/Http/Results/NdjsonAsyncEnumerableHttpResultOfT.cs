@@ -22,11 +22,6 @@ namespace Ndjson.AsyncStreams.AspNetCore.Http.HttpResults;
 /// <typeparam name="T">The type of the values in async stream to be serialized.</typeparam>
 public partial class NdjsonAsyncEnumerableHttpResult<T> : IResult, IStatusCodeHttpResult, IValueHttpResult, IValueHttpResult<IAsyncEnumerable<T>>, IContentTypeHttpResult
 {
-    private static readonly string CONTENT_TYPE = new MediaTypeHeaderValue("application/x-ndjson")
-    {
-        Encoding = Encoding.UTF8
-    }.ToString();
-
     private static readonly byte[] _newlineDelimiter = Encoding.UTF8.GetBytes("\n");
 
     /// <summary>
@@ -44,32 +39,38 @@ public partial class NdjsonAsyncEnumerableHttpResult<T> : IResult, IStatusCodeHt
     /// <summary>
     /// Gets the value for the <c>Content-Type</c> header.
     /// </summary>
-    public string ContentType { get; } = CONTENT_TYPE;
+    public string ContentType { get; }
 
     /// <summary>
     /// Gets or sets the serializer settings.
     /// </summary>
-    public JsonSerializerOptions? JsonSerializerOptions { get; internal init; }
+    public JsonSerializerOptions? JsonSerializerOptions { get; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="NdjsonAsyncEnumerableHttpResult{T}"/> class with the values.
     /// </summary>
     /// <param name="value">The async stream of values to be serialized to the response.</param>
+    /// <param name="contentType">The value for the <c>Content-Type</c> header</param>
     /// <param name="jsonSerializerOptions">The serializer settings.</param>
-    internal NdjsonAsyncEnumerableHttpResult(IAsyncEnumerable<T>? value, JsonSerializerOptions? jsonSerializerOptions)
-        : this(value, statusCode: null, jsonSerializerOptions: jsonSerializerOptions)
+    internal NdjsonAsyncEnumerableHttpResult(IAsyncEnumerable<T>? value, string contentType, JsonSerializerOptions? jsonSerializerOptions)
+        : this(value, contentType, statusCode: null, jsonSerializerOptions: jsonSerializerOptions)
     { }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="NdjsonAsyncEnumerableHttpResult{T}"/> class with the values.
     /// </summary>
     /// <param name="value">The async stream of values to be serialized to the response.</param>
+    /// <param name="contentType">The value for the <c>Content-Type</c> header</param>
     /// <param name="jsonSerializerOptions">The serializer settings.</param>
     /// <param name="statusCode">The HTTP status code of the response.</param>
-    internal NdjsonAsyncEnumerableHttpResult(IAsyncEnumerable<T>? value, JsonSerializerOptions? jsonSerializerOptions, int? statusCode)
+    internal NdjsonAsyncEnumerableHttpResult(IAsyncEnumerable<T>? value, string contentType, JsonSerializerOptions? jsonSerializerOptions, int? statusCode)
     {
         Value = value;
         StatusCode = statusCode;
+        ContentType = new MediaTypeHeaderValue(contentType)
+        {
+            Encoding = Encoding.UTF8
+        }.ToString();
         JsonSerializerOptions = jsonSerializerOptions;        
     }
 
@@ -113,10 +114,10 @@ public partial class NdjsonAsyncEnumerableHttpResult<T> : IResult, IStatusCodeHt
         }
     }
 
-    private static void SetContentType(HttpContext httpContext, ILogger logger)
+    private void SetContentType(HttpContext httpContext, ILogger logger)
     {
-        Log.SettingContentType(logger, CONTENT_TYPE);
-        httpContext.Response.ContentType = CONTENT_TYPE;
+        Log.SettingContentType(logger, ContentType);
+        httpContext.Response.ContentType = ContentType;
     }
 
     private static void DisableResponseBuffering(HttpContext httpContext, ILogger logger)
