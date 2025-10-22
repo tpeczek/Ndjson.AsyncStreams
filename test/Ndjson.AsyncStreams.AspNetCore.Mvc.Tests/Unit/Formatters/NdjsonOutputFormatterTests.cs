@@ -28,13 +28,22 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit.Formatters
         }
 
         private const string NDJSON_MEDIA_TYPE = "application/x-ndjson";
+        private const string JSONL_MEDIA_TYPE = "application/jsonl";
 
-        private const string NDJSON = "{\"id\":1,\"name\":\"Value 01\"}\n{\"id\":2,\"name\":\"Value 02\"}\n";
+        private const string VALUES = "{\"id\":1,\"name\":\"Value 01\"}\n{\"id\":2,\"name\":\"Value 02\"}\n";
 
-        public static IEnumerable<object[]> NdjsonOutputFormatters => new List<object[]>
+        public static IEnumerable<object[]> OutputFormatters => new List<object[]>
         {
             new object[] { PrepareSystemTextNdjsonOutputFormatter() },
             new object[] { PrepareNewtonsoftNdjsonOutputFormatter() }
+        };
+
+        public static IEnumerable<object[]> OutputFormattersAndMediaTypesMatrix => new List<object[]>
+        {
+            new object[] { PrepareSystemTextNdjsonOutputFormatter(), NDJSON_MEDIA_TYPE },
+            new object[] { PrepareSystemTextNdjsonOutputFormatter(), JSONL_MEDIA_TYPE },
+            new object[] { PrepareNewtonsoftNdjsonOutputFormatter(), NDJSON_MEDIA_TYPE },
+            new object[] { PrepareNewtonsoftNdjsonOutputFormatter(), JSONL_MEDIA_TYPE }
         };
 
         private static TextOutputFormatter PrepareSystemTextNdjsonOutputFormatter()
@@ -67,7 +76,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit.Formatters
             return new HttpResponseStreamWriter(stream, encoding, 16 * 1024);
         }
 
-        private static OutputFormatterWriteContext PrepareOutputFormatterCanWriteContext(string contentType = NDJSON_MEDIA_TYPE, object @object = null)
+        private static OutputFormatterWriteContext PrepareOutputFormatterCanWriteContext(string contentType, object @object = null)
         {
             HttpContext httpContext = new DefaultHttpContext();
             httpContext.Request.Headers.Add("Accept", contentType);
@@ -82,64 +91,67 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit.Formatters
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonOutputFormatters))]
-        public void SupportedMediaTypes_ContainsOnlyNdjson(TextOutputFormatter ndjsonOutputFormatter)
+        [MemberData(nameof(OutputFormatters))]
+        public void SupportedMediaTypes_ContainsNdjsonAndJsonl(TextOutputFormatter outputFormatter)
         {
-            Assert.Collection(ndjsonOutputFormatter.SupportedMediaTypes, (string mediaType) => Assert.Equal(NDJSON_MEDIA_TYPE, mediaType));
+            Assert.Collection(outputFormatter.SupportedMediaTypes,
+                (string mediaType) => Assert.Equal(NDJSON_MEDIA_TYPE, mediaType),
+                (string mediaType) => Assert.Equal(JSONL_MEDIA_TYPE, mediaType)
+            );
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonOutputFormatters))]
-        public void SupportedEncodings_ContainsOnlyUTF8Encoding(TextOutputFormatter ndjsonOutputFormatter)
+        [MemberData(nameof(OutputFormatters))]
+        public void SupportedEncodings_ContainsOnlyUTF8Encoding(TextOutputFormatter outputFormatter)
         {
-            Assert.Collection(ndjsonOutputFormatter.SupportedEncodings, (Encoding encoding) => Assert.Equal(Encoding.UTF8, encoding));
+            Assert.Collection(outputFormatter.SupportedEncodings, (Encoding encoding) => Assert.Equal(Encoding.UTF8, encoding));
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonOutputFormatters))]
-        public void CanWriteResult_ForSupportedContentTypeAndObjectType_ReturnsTrue(TextOutputFormatter ndjsonOutputFormatter)
+        [MemberData(nameof(OutputFormattersAndMediaTypesMatrix))]
+        public void CanWriteResult_ForSupportedContentTypeAndObjectType_ReturnsTrue(TextOutputFormatter outputFormatter, string contentType)
         {
-            OutputFormatterWriteContext outputFormatterCanWriteContext = PrepareOutputFormatterCanWriteContext();
+            OutputFormatterWriteContext outputFormatterCanWriteContext = PrepareOutputFormatterCanWriteContext(contentType);
 
-            bool canWriteResult = ndjsonOutputFormatter.CanWriteResult(outputFormatterCanWriteContext);
+            bool canWriteResult = outputFormatter.CanWriteResult(outputFormatterCanWriteContext);
 
             Assert.True(canWriteResult);
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonOutputFormatters))]
-        public void CanWriteResult_ForNotSupportedContentTypeAndSupportedObjectType_ReturnsFalse(TextOutputFormatter ndjsonOutputFormatter)
+        [MemberData(nameof(OutputFormatters))]
+        public void CanWriteResult_ForNotSupportedContentTypeAndSupportedObjectType_ReturnsFalse(TextOutputFormatter outputFormatter)
         {
             OutputFormatterWriteContext outputFormatterCanWriteContext = PrepareOutputFormatterCanWriteContext(contentType: "application/json");
 
-            bool canWriteResult = ndjsonOutputFormatter.CanWriteResult(outputFormatterCanWriteContext);
+            bool canWriteResult = outputFormatter.CanWriteResult(outputFormatterCanWriteContext);
 
             Assert.False(canWriteResult);
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonOutputFormatters))]
-        public void CanWriteResult_SupportedContentTypeAndNotSupportedObjectType_ReturnsTrue(TextOutputFormatter ndjsonOutputFormatter)
+        [MemberData(nameof(OutputFormattersAndMediaTypesMatrix))]
+        public void CanWriteResult_SupportedContentTypeAndNotSupportedObjectType_ReturnsTrue(TextOutputFormatter outputFormatter, string contentType)
         {
-            OutputFormatterWriteContext outputFormatterCanWriteContext = PrepareOutputFormatterCanWriteContext(@object: Enumerable.Empty<ValueType>());
+            OutputFormatterWriteContext outputFormatterCanWriteContext = PrepareOutputFormatterCanWriteContext(contentType, @object: Enumerable.Empty<ValueType>());
 
-            bool canWriteResult = ndjsonOutputFormatter.CanWriteResult(outputFormatterCanWriteContext);
+            bool canWriteResult = outputFormatter.CanWriteResult(outputFormatterCanWriteContext);
 
             Assert.False(canWriteResult);
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonOutputFormatters))]
-        public async Task WriteAsync_ForSupportedContentTypeAndObjectType_WritesCorrectNdjson(TextOutputFormatter ndjsonOutputFormatter)
+        [MemberData(nameof(OutputFormattersAndMediaTypesMatrix))]
+        public async Task WriteAsync_ForSupportedContentTypeAndObjectType_WritesCorrectValues(TextOutputFormatter outputFormatter, string contentType)
         {
-            OutputFormatterWriteContext outputFormatterCanWriteContext = PrepareOutputFormatterCanWriteContext();
+            OutputFormatterWriteContext outputFormatterCanWriteContext = PrepareOutputFormatterCanWriteContext(contentType);
 
-            await ndjsonOutputFormatter.WriteAsync(outputFormatterCanWriteContext);
+            await outputFormatter.WriteAsync(outputFormatterCanWriteContext);
 
             using StreamReader responseBodyReader = new StreamReader(outputFormatterCanWriteContext.HttpContext.Response.Body);
             outputFormatterCanWriteContext.HttpContext.Response.Body.Seek(0, SeekOrigin.Begin);
 
-            Assert.Equal(NDJSON, await responseBodyReader.ReadToEndAsync());
+            Assert.Equal(VALUES, await responseBodyReader.ReadToEndAsync());
         }
     }
 }

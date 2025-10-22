@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Encodings.Web;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Options;
 
@@ -10,7 +11,11 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 {
     internal class SystemTextNdjsonWriterFactory : INdjsonWriterFactory
     {
-        private static readonly string CONTENT_TYPE = MediaTypeHeaderValues.ApplicationNdjsonWithUTF8Encoding.ToString();
+        private static readonly Dictionary<string, string> CONTENT_TYPES = new Dictionary<string, string>
+        {
+            { MediaTypeHeaderValues.APPLICATION_NDJSON_MEDIA_TYPE, MediaTypeHeaderValues.ApplicationNdjsonWithUTF8Encoding.ToString() },
+            { MediaTypeHeaderValues.APPLICATION_JSONL_MEDIA_TYPE, MediaTypeHeaderValues.ApplicationJsonlWithUTF8Encoding.ToString() }
+        };
 
         private readonly JsonSerializerOptions _jsonSerializerOptions;
 
@@ -29,7 +34,15 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
         }
 
         public INdjsonWriter<T> CreateWriter<T>(ActionContext context, IStatusCodeActionResult result)
+            => CreateWriter<T>(MediaTypeHeaderValues.APPLICATION_NDJSON_MEDIA_TYPE, context, result);
+
+        public INdjsonWriter<T> CreateWriter<T>(string mediaType, ActionContext context, IStatusCodeActionResult result)
         {
+            if (!MediaTypeHeaderValues.IsSupportedMediaType(mediaType))
+            {
+                throw new NotSupportedException($"Not supported media type {mediaType}.");
+            }
+
             if (context is null)
             {
                 throw new ArgumentNullException(nameof(context));
@@ -42,7 +55,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Internals
 
             HttpResponse response = context.HttpContext.Response;
 
-            response.ContentType = CONTENT_TYPE;
+            response.ContentType = CONTENT_TYPES[mediaType];
 
             if (result.StatusCode != null)
             {

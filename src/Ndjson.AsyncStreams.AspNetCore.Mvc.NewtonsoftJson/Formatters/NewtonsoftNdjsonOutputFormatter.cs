@@ -15,7 +15,7 @@ using Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Internals;
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
 {
     /// <summary>
-    /// A <see cref="TextOutputFormatter"/> for NDJSON content that uses <see cref="JsonSerializer"/>.
+    /// A <see cref="TextOutputFormatter"/> for NDJSON or JSONL content that uses <see cref="JsonSerializer"/>.
     /// </summary>
     public class NewtonsoftNdjsonOutputFormatter : TextOutputFormatter
     {
@@ -79,6 +79,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Formatters
             SupportedEncodings.Add(Encoding.UTF8);
 
             SupportedMediaTypes.Add(MediaTypeHeaderValues.ApplicationNdjson);
+            SupportedMediaTypes.Add(MediaTypeHeaderValues.ApplicationJsonl);
         }
 
         /// <inheritdoc />

@@ -1,19 +1,21 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
+using Ndjson.AsyncStreams.AspNetCore.Mvc.Internals;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc
 {
     /// <summary>
-    /// Provides <see cref="ActionResult"/> based on NDJSON and <see cref="IAsyncEnumerable{T}"/>.
+    /// Provides <see cref="ActionResult"/> based on NDJSON/JSONL and <see cref="IAsyncEnumerable{T}"/>.
     /// </summary>
     /// <typeparam name="T">The type of the values in async stream to be serialized.</typeparam>
     public class NdjsonAsyncEnumerableResult<T> : ActionResult, IStatusCodeActionResult
     {
         private readonly IAsyncEnumerable<T> _values;
+        private readonly string _mediaType;
 
         /// <summary>
         /// Gets or sets the HTTP status code.
@@ -25,8 +27,17 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc
         /// </summary>
         /// <param name="values">The async stream of values to be serialized.</param>
         public NdjsonAsyncEnumerableResult(IAsyncEnumerable<T> values)
+            : this(values, MediaTypeHeaderValues.APPLICATION_NDJSON_MEDIA_TYPE) { }
+
+        /// <summary>
+        /// Initializes new instance of <see cref="NdjsonAsyncEnumerableResult{T}"/>.
+        /// </summary>
+        /// <param name="values">The async stream of values to be serialized.</param>
+        /// <param name="mediaType">The media type to be used.</param>
+        public NdjsonAsyncEnumerableResult(IAsyncEnumerable<T> values, string mediaType)
         {
             _values = values ?? throw new ArgumentNullException(nameof(values));
+            _mediaType = _mediaType ?? throw new ArgumentNullException(nameof(mediaType));
         }
 
         /// <summary>
@@ -51,7 +62,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc
             }
 
             INdjsonWriterFactory ndjsonTextWriterFactory = context.HttpContext.RequestServices.GetRequiredService<INdjsonWriterFactory>();
-            using INdjsonWriter<T> ndjsonTextWriter = ndjsonTextWriterFactory.CreateWriter<T>(context, this);
+            using INdjsonWriter<T> ndjsonTextWriter = ndjsonTextWriterFactory.CreateWriter<T>(_mediaType, context, this);
 
             try
             {

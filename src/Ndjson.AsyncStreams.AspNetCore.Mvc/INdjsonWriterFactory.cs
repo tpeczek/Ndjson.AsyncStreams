@@ -15,5 +15,14 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc
         /// <param name="result">The <see cref="IStatusCodeActionResult"/>.</param>
         /// <returns>The new <see cref="INdjsonWriter{T}"/>.</returns>
         INdjsonWriter<T> CreateWriter<T>(ActionContext context, IStatusCodeActionResult result);
+
+        /// <summary>
+        /// Creates a new <see cref="INdjsonWriter{T}"/>.
+        /// </summary>
+        /// <param name="mediaType">The media type to be used.</param>
+        /// <param name="context">The <see cref="ActionContext"/>.</param>
+        /// <param name="result">The <see cref="IStatusCodeActionResult"/>.</param>
+        /// <returns>The new <see cref="INdjsonWriter{T}"/>.</returns>
+        INdjsonWriter<T> CreateWriter<T>(string mediaType, ActionContext context, IStatusCodeActionResult result);
     }
 }

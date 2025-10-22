@@ -27,7 +27,8 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit.Formatters
         }
 
         private const string NDJSON_MEDIA_TYPE = "application/x-ndjson";
-        private const string NDJSON_CONTENT = "{\"id\":1,\"name\":\"Value 01\"}\n{\"id\":2,\"name\":\"Value 02\"}\n";
+        private const string JSONL_MEDIA_TYPE = "application/jsonl";
+        private const string VALUES_CONTENT = "{\"id\":1,\"name\":\"Value 01\"}\n{\"id\":2,\"name\":\"Value 02\"}\n";
         private static readonly List<ValueType> VALUES = new()
         {
             new ValueType { Id = 1, Name = "Value 01" },
@@ -35,10 +36,18 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit.Formatters
         };
         private static readonly Encoding UTF8_ENCODING_WITHOUT_BOM = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false, throwOnInvalidBytes: true);
 
-        public static IEnumerable<object[]> NdjsonInputFormatters => new List<object[]>
+        public static IEnumerable<object[]> InputFormatters => new List<object[]>
         {
             new object[] { PrepareSystemTextNdjsonInputFormatter() },
             new object[] { PrepareNewtonsoftNdjsonInputFormatter() }
+        };
+
+        public static IEnumerable<object[]> InputFormattersAndMediaTypesMatrix => new List<object[]>
+        {
+            new object[] { PrepareSystemTextNdjsonInputFormatter(), NDJSON_MEDIA_TYPE },
+            new object[] { PrepareSystemTextNdjsonInputFormatter(), JSONL_MEDIA_TYPE },
+            new object[] { PrepareNewtonsoftNdjsonInputFormatter(), NDJSON_MEDIA_TYPE },
+            new object[] { PrepareNewtonsoftNdjsonInputFormatter(), JSONL_MEDIA_TYPE }
         };
 
         private static TextInputFormatter PrepareSystemTextNdjsonInputFormatter()
@@ -54,7 +63,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit.Formatters
             );
         }
 
-        private static InputFormatterContext PrepareInputFormatterContext(string contentType = NDJSON_MEDIA_TYPE, string content = NDJSON_CONTENT, Type modelType = null)
+        private static InputFormatterContext PrepareInputFormatterContext(string contentType, string content = VALUES_CONTENT, Type modelType = null)
         {
             HttpContext httpContext = new DefaultHttpContext();
             httpContext.Request.Body = new MemoryStream(Encoding.UTF8.GetBytes(content));
@@ -72,59 +81,62 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit.Formatters
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonInputFormatters))]
-        public void SupportedMediaTypes_ContainsOnlyNdjson(TextInputFormatter ndjsonInputFormatter)
+        [MemberData(nameof(InputFormatters))]
+        public void SupportedMediaTypes_ContainsNdjsonAndJsonl(TextInputFormatter inputFormatter)
         {
-            Assert.Collection(ndjsonInputFormatter.SupportedMediaTypes, (string mediaType) => Assert.Equal(NDJSON_MEDIA_TYPE, mediaType));
+            Assert.Collection(inputFormatter.SupportedMediaTypes,
+                (string mediaType) => Assert.Equal(NDJSON_MEDIA_TYPE, mediaType),
+                (string mediaType) => Assert.Equal(JSONL_MEDIA_TYPE, mediaType)
+            );
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonInputFormatters))]
-        public void SupportedEncodings_ContainsOnlyUTF8EncodingWithoutBOM(TextInputFormatter ndjsonInputFormatter)
+        [MemberData(nameof(InputFormatters))]
+        public void SupportedEncodings_ContainsOnlyUTF8EncodingWithoutBOM(TextInputFormatter inputFormatter)
         {
-            Assert.Collection(ndjsonInputFormatter.SupportedEncodings, (Encoding encoding) => Assert.Equal(UTF8_ENCODING_WITHOUT_BOM, encoding));
+            Assert.Collection(inputFormatter.SupportedEncodings, (Encoding encoding) => Assert.Equal(UTF8_ENCODING_WITHOUT_BOM, encoding));
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonInputFormatters))]
-        public void CanRead_ForSupportedContentTypeAndModelType_ReturnsTrue(TextInputFormatter ndjsonInputFormatter)
+        [MemberData(nameof(InputFormattersAndMediaTypesMatrix))]
+        public void CanRead_ForSupportedContentTypeAndModelType_ReturnsTrue(TextInputFormatter inputFormatter, string contentType)
         {
-            InputFormatterContext inputFormatterContext = PrepareInputFormatterContext();
+            InputFormatterContext inputFormatterContext = PrepareInputFormatterContext(contentType);
 
-            bool canRead = ndjsonInputFormatter.CanRead(inputFormatterContext);
+            bool canRead = inputFormatter.CanRead(inputFormatterContext);
 
             Assert.True(canRead);
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonInputFormatters))]
-        public void CanRead_ForNotSupportedContentTypeAndSupportedModelType_ReturnsFalse(TextInputFormatter ndjsonInputFormatter)
+        [MemberData(nameof(InputFormatters))]
+        public void CanRead_ForNotSupportedContentTypeAndSupportedModelType_ReturnsFalse(TextInputFormatter inputFormatter)
         {
             InputFormatterContext inputFormatterContext = PrepareInputFormatterContext(contentType: "application/json");
 
-            bool canRead = ndjsonInputFormatter.CanRead(inputFormatterContext);
+            bool canRead = inputFormatter.CanRead(inputFormatterContext);
 
             Assert.False(canRead);
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonInputFormatters))]
-        public void CanRead_SupportedContentTypeAndNotSupportedModelType_ReturnsTrue(TextInputFormatter ndjsonInputFormatter)
+        [MemberData(nameof(InputFormattersAndMediaTypesMatrix))]
+        public void CanRead_SupportedContentTypeAndNotSupportedModelType_ReturnsTrue(TextInputFormatter inputFormatter, string contentType)
         {
-            InputFormatterContext inputFormatterContext = PrepareInputFormatterContext(modelType: typeof(IEnumerable<ValueType>));
+            InputFormatterContext inputFormatterContext = PrepareInputFormatterContext(contentType, modelType: typeof(IEnumerable<ValueType>));
 
-            bool canRead = ndjsonInputFormatter.CanRead(inputFormatterContext);
+            bool canRead = inputFormatter.CanRead(inputFormatterContext);
 
             Assert.False(canRead);
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonInputFormatters))]
-        public async Task ReadAsync_ForSupportedContentTypeAndModelType_ReadsCorrectValues(TextInputFormatter ndjsonInputFormatter)
+        [MemberData(nameof(InputFormattersAndMediaTypesMatrix))]
+        public async Task ReadAsync_ForSupportedContentTypeAndModelType_ReadsCorrectValues(TextInputFormatter inputFormatter, string contentType)
         {
-            InputFormatterContext inputFormatterContext = PrepareInputFormatterContext();
+            InputFormatterContext inputFormatterContext = PrepareInputFormatterContext(contentType);
 
-            InputFormatterResult inputFormatterResult = await ndjsonInputFormatter.ReadAsync(inputFormatterContext);
+            InputFormatterResult inputFormatterResult = await inputFormatter.ReadAsync(inputFormatterContext);
 
             Assert.False(inputFormatterResult.HasError);
             IAsyncEnumerable<ValueType> values = Assert.IsAssignableFrom<IAsyncEnumerable<ValueType>>(inputFormatterResult.Model);

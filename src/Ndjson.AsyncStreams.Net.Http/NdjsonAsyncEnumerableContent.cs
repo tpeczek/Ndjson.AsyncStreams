@@ -13,7 +13,7 @@ using Ndjson.AsyncStreams.Net.Http.Internals;
 namespace Ndjson.AsyncStreams.Net.Http
 {
     /// <summary>
-    /// Provides <see cref="HttpContent" /> based on NDJSON and <see cref="IAsyncEnumerable{T}"/>.
+    /// Provides <see cref="HttpContent" /> based on NDJSON/JSONL and <see cref="IAsyncEnumerable{T}"/>.
     /// </summary>
     /// <typeparam name="T">The type of the values in async stream to be serialized.</typeparam>
     public class NdjsonAsyncEnumerableContent<T> : HttpContent
@@ -48,7 +48,7 @@ namespace Ndjson.AsyncStreams.Net.Http
 
             if (!MediaTypeHeaderValues.IsSupportedMediaType(mediaType))
             {
-                throw new NotSupportedException();
+                throw new NotSupportedException($"Not supported media type {mediaType}.");
             }
 
             Headers.ContentType = new MediaTypeHeaderValue(mediaType)

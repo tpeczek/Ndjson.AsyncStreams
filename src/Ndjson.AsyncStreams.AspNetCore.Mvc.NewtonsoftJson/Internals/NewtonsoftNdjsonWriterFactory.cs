@@ -1,18 +1,22 @@
 ﻿using System;
-using System.Text;
 using System.Buffers;
-using Microsoft.Extensions.Options;
+using System.Collections.Generic;
+using System.Text;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Extensions.Options;
 using Ndjson.AsyncStreams.AspNetCore.Mvc.Internals;
 
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Internals
 {
     internal class NewtonsoftNdjsonWriterFactory : INdjsonWriterFactory
     {
-        private static readonly string CONTENT_TYPE = MediaTypeHeaderValues.ApplicationNdjsonWithUTF8Encoding.ToString();
+        private static readonly Dictionary<string, string> CONTENT_TYPES = new Dictionary<string, string>
+        {
+            { MediaTypeHeaderValues.APPLICATION_NDJSON_MEDIA_TYPE, MediaTypeHeaderValues.ApplicationNdjsonWithUTF8Encoding.ToString() },
+            { MediaTypeHeaderValues.APPLICATION_JSONL_MEDIA_TYPE, MediaTypeHeaderValues.ApplicationJsonlWithUTF8Encoding.ToString() }
+        };
 
         private readonly IHttpResponseStreamWriterFactory _httpResponseStreamWriterFactory;
         private readonly MvcNewtonsoftJsonOptions _options;
@@ -32,7 +36,15 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Internals
         }
 
         public INdjsonWriter<T> CreateWriter<T>(ActionContext context, IStatusCodeActionResult result)
+            => CreateWriter<T>(MediaTypeHeaderValues.APPLICATION_NDJSON_MEDIA_TYPE, context, result);
+
+        public INdjsonWriter<T> CreateWriter<T>(string mediaType, ActionContext context, IStatusCodeActionResult result)
         {
+            if (!MediaTypeHeaderValues.IsSupportedMediaType(mediaType))
+            {
+                throw new NotSupportedException($"Not supported media type {mediaType}.");
+            }
+
             if (context is null)
             {
                 throw new ArgumentNullException(nameof(context));
@@ -45,7 +57,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.Internals
 
             HttpResponse response = context.HttpContext.Response;
 
-            response.ContentType = CONTENT_TYPE;
+            response.ContentType = CONTENT_TYPES[mediaType];
 
             if (result.StatusCode != null)
             {

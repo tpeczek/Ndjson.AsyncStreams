@@ -13,7 +13,7 @@ using Ndjson.AsyncStreams.AspNetCore.Mvc.Internals;
 namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
 {
     /// <summary>
-    /// A <see cref="TextInputFormatter"/> for async stream incoming as NDJSON content that uses <see cref="JsonSerializer"/>.
+    /// A <see cref="TextInputFormatter"/> for async stream incoming as NDJSON or JSONL content that uses <see cref="JsonSerializer"/>.
     /// </summary>
     public class SystemTextNdjsonInputFormatter : TextInputFormatter, IInputFormatterExceptionPolicy
     {
@@ -73,6 +73,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Formatters
             SupportedEncodings.Add(UTF8EncodingWithoutBOM);
 
             SupportedMediaTypes.Add(MediaTypeHeaderValues.ApplicationNdjson);
+            SupportedMediaTypes.Add(MediaTypeHeaderValues.ApplicationJsonl);
         }
 
         /// <inheritdoc />

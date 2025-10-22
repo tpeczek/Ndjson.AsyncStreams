@@ -28,15 +28,21 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit
         }
 
         private static readonly StatusCodeResult OK_RESULT = new OkResult();
-        private static readonly string CONTENT_TYPE = new MediaTypeHeaderValue("application/x-ndjson")
-        {
-            Encoding = Encoding.UTF8
-        }.ToString();
+        private const string NDJSON_MEDIA_TYPE = "application/x-ndjson";
+        private const string JSONL_MEDIA_TYPE = "application/jsonl";
 
-        public static IEnumerable<object[]> NdjsonWriterFactories => new List<object[]>
+        public static IEnumerable<object[]> WriterFactories => new List<object[]>
         {
             new object[] { PrepareSystemTextNdjsonWriterFactory() },
             new object[] { PrepareNewtonsoftNdjsonWriterFactory() }
+        };
+
+        public static IEnumerable<object[]> WriterFactoriesAndMediaTypesMatrix => new List<object[]>
+        {
+            new object[] { PrepareSystemTextNdjsonWriterFactory(), NDJSON_MEDIA_TYPE },
+            new object[] { PrepareSystemTextNdjsonWriterFactory(), JSONL_MEDIA_TYPE },
+            new object[] { PrepareNewtonsoftNdjsonWriterFactory(), NDJSON_MEDIA_TYPE },
+            new object[] { PrepareNewtonsoftNdjsonWriterFactory(), JSONL_MEDIA_TYPE }
         };
 
         private static INdjsonWriterFactory PrepareSystemTextNdjsonWriterFactory()
@@ -73,68 +79,69 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc.Tests.Unit
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonWriterFactories))]
-        public void CreateWriter_ContextIsNull_ThrowsArgumentNullException(INdjsonWriterFactory ndjsonWriterFactory)
+        [MemberData(nameof(WriterFactories))]
+        public void CreateWriter_ContextIsNull_ThrowsArgumentNullException(INdjsonWriterFactory writerFactory)
         {
             Assert.Throws<ArgumentNullException>("context", () =>
             {
-                ndjsonWriterFactory.CreateWriter<ValueType>(null, OK_RESULT);
+                writerFactory.CreateWriter<ValueType>(null, OK_RESULT);
             });
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonWriterFactories))]
-        public void CreateWriter_ResultIsNull_ThrowsArgumentNullException(INdjsonWriterFactory ndjsonWriterFactory)
+        [MemberData(nameof(WriterFactories))]
+        public void CreateWriter_ResultIsNull_ThrowsArgumentNullException(INdjsonWriterFactory writerFactory)
         {
             Assert.Throws<ArgumentNullException>("result", () =>
             {
-                ndjsonWriterFactory.CreateWriter<ValueType>(PrepareActionContext(), null);
+                writerFactory.CreateWriter<ValueType>(PrepareActionContext(), null);
             });
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonWriterFactories))]
-        public void CreateWriter_ResponseContentTypeIsSetToNdjsonWithUtf8Encoding(INdjsonWriterFactory ndjsonWriterFactory)
+        [MemberData(nameof(WriterFactoriesAndMediaTypesMatrix))]
+        public void CreateWriter_ResponseContentTypeIsSetToMediaTypeWithUtf8Encoding(INdjsonWriterFactory writerFactory, string mediaType)
         {
             ActionContext actionContext = PrepareActionContext();
+            string mediaTypeWithUtf8Encoding = new MediaTypeHeaderValue(mediaType) { Encoding = Encoding.UTF8 }.ToString();
 
-            ndjsonWriterFactory.CreateWriter<ValueType>(actionContext, OK_RESULT);
+            writerFactory.CreateWriter<ValueType>(mediaType, actionContext, OK_RESULT);
 
-            Assert.Equal(CONTENT_TYPE, actionContext.HttpContext.Response.ContentType);
+            Assert.Equal(mediaTypeWithUtf8Encoding, actionContext.HttpContext.Response.ContentType);
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonWriterFactories))]
-        public void CreateWriter_ResponseStatusCodeIsProvided(INdjsonWriterFactory ndjsonWriterFactory)
+        [MemberData(nameof(WriterFactories))]
+        public void CreateWriter_ResponseStatusCodeIsProvided(INdjsonWriterFactory writerFactory)
         {
             ActionContext actionContext = PrepareActionContext();
 
-            ndjsonWriterFactory.CreateWriter<ValueType>(actionContext, OK_RESULT);
+            writerFactory.CreateWriter<ValueType>(actionContext, OK_RESULT);
 
             Assert.Equal(OK_RESULT.StatusCode, actionContext.HttpContext.Response.StatusCode);
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonWriterFactories))]
-        public void CreateWriter_DisablesResponseBuffering(INdjsonWriterFactory ndjsonWriterFactory)
+        [MemberData(nameof(WriterFactories))]
+        public void CreateWriter_DisablesResponseBuffering(INdjsonWriterFactory writerFactory)
         {
             Mock<StreamResponseBodyFeature> httpResponseBodyFeatureMock = new (Stream.Null);
             ActionContext actionContext = PrepareActionContext(httpResponseBodyFeatureMock.Object);
 
-            ndjsonWriterFactory.CreateWriter<ValueType>(actionContext, OK_RESULT);
+            writerFactory.CreateWriter<ValueType>(actionContext, OK_RESULT);
 
             httpResponseBodyFeatureMock.Verify(m => m.DisableBuffering(), Times.Once);
         }
 
         [Theory]
-        [MemberData(nameof(NdjsonWriterFactories))]
-        public void CreateWriter_CreatesWriter(INdjsonWriterFactory ndjsonWriterFactory)
+        [MemberData(nameof(WriterFactories))]
+        public void CreateWriter_CreatesWriter(INdjsonWriterFactory writerFactory)
         {
             ActionContext actionContext = PrepareActionContext();
 
-            INdjsonWriter<ValueType> ndjsonWriter = ndjsonWriterFactory.CreateWriter<ValueType>(actionContext, OK_RESULT);
+            INdjsonWriter<ValueType> writer = writerFactory.CreateWriter<ValueType>(actionContext, OK_RESULT);
 
-            Assert.NotNull(ndjsonWriter);
+            Assert.NotNull(writer);
         }
     }
 }
