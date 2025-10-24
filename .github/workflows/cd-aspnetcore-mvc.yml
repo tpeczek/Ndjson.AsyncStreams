@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
     - name: Extract VERSION
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/aspnetcore-mvc-v/}" >> $GITHUB_ENV
     - name: Setup .NET Core 3.1 SDK
@@ -47,8 +47,3 @@ jobs:
       run: dotnet nuget push src/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson/bin/Release/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-    - name: Publish Documentation
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: docs/Ndjson.AsyncStreams.DocFx/wwwroot

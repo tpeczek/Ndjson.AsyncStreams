@@ -20,10 +20,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ndjson.AsyncStreams.AspNetC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson", "src\Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson\Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.csproj", "{0F85F6AE-1C13-476E-945F-AAF4997DD051}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{3E0EBFB8-5167-4F4F-8A0F-C013D23D5238}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ndjson.AsyncStreams.DocFx", "docs\Ndjson.AsyncStreams.DocFx\Ndjson.AsyncStreams.DocFx.csproj", "{96123E46-1C81-4810-B710-FD4B1F08E582}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B535868B-C064-4A28-8E59-69081385AB1B}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.md = LICENSE.md
@@ -33,6 +29,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ndjson.AsyncStreams.AspNetCore", "src\Ndjson.AsyncStreams.AspNetCore\Ndjson.AsyncStreams.AspNetCore.csproj", "{EE057DD0-020E-4618-AB7E-57E89ABD4C52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ndjson.AsyncStreams.AspNetCore.Tests", "test\Ndjson.AsyncStreams.AspNetCore.Tests\Ndjson.AsyncStreams.AspNetCore.Tests.csproj", "{5629047B-8E27-4E23-BC43-A7F9F7EF743B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		docs\docfx.json = docs\docfx.json
+		docs\index.md = docs\index.md
+		docs\toc.md = docs\toc.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,10 +63,6 @@ Global
 		{0F85F6AE-1C13-476E-945F-AAF4997DD051}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F85F6AE-1C13-476E-945F-AAF4997DD051}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F85F6AE-1C13-476E-945F-AAF4997DD051}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96123E46-1C81-4810-B710-FD4B1F08E582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96123E46-1C81-4810-B710-FD4B1F08E582}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96123E46-1C81-4810-B710-FD4B1F08E582}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96123E46-1C81-4810-B710-FD4B1F08E582}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE057DD0-020E-4618-AB7E-57E89ABD4C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE057DD0-020E-4618-AB7E-57E89ABD4C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE057DD0-020E-4618-AB7E-57E89ABD4C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -82,9 +81,9 @@ Global
 		{2C172D25-FDA1-4DDF-98F7-568A16443230} = {55EFE6F9-33D5-4153-B1DE-5672827DEB08}
 		{60ECE376-F1BF-4CCD-877C-BAB401BFB9D4} = {0889D597-88B4-432C-8C30-DE10CAD53834}
 		{0F85F6AE-1C13-476E-945F-AAF4997DD051} = {55EFE6F9-33D5-4153-B1DE-5672827DEB08}
-		{96123E46-1C81-4810-B710-FD4B1F08E582} = {3E0EBFB8-5167-4F4F-8A0F-C013D23D5238}
 		{EE057DD0-020E-4618-AB7E-57E89ABD4C52} = {55EFE6F9-33D5-4153-B1DE-5672827DEB08}
 		{5629047B-8E27-4E23-BC43-A7F9F7EF743B} = {0889D597-88B4-432C-8C30-DE10CAD53834}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {B535868B-C064-4A28-8E59-69081385AB1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C3DC840-115D-4634-9527-340F8269AF24}

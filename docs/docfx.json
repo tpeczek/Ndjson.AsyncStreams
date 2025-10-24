@@ -10,13 +10,10 @@
             "src/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson/Ndjson.AsyncStreams.AspNetCore.Mvc.NewtonsoftJson.csproj"
           ],
           "exclude": [ "**/bin/**", "**/obj/**" ],
-          "src": "../.."
+          "src": ".."
         }
       ],
-      "dest": "api",
-      "properties": {
-        "TargetFramework": "net8.0"
-      }
+      "dest": "api"
     }
   ],
   "build": {
@@ -37,7 +34,7 @@
         ]
       }
     ],
-    "dest": "wwwroot",
+    "dest": "_artifact",
     "globalMetadata": {
       "_appTitle": "Ndjson.AsyncStreams",
       "_appFooter": "Copyright © 2021 - 2025 Tomasz Pęczek",
