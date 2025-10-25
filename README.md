@@ -7,7 +7,7 @@ JsonStreaming.NET is a solution that provides a set of libraries (`Ndjson.AsyncS
 
 ## Documentation
 
-The documentation is available [here](https://tpeczek.github.io/Ndjson.AsyncStreams/).
+The documentation is available [here](https://tpeczek.github.io/json-streaming-dotnet/).
 
 ## Demos
 
