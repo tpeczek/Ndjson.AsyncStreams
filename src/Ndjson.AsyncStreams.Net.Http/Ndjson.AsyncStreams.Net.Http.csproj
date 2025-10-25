@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Ndjson.AsyncStreams.Net.Http is a solution for working with asynchronous streaming data sources in HttpClient using NDJSON (Newline Delimited JSON).</Description>
-    <VersionPrefix>2.0.0</VersionPrefix>
+    <VersionPrefix>2.1.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <TargetFramework>net7.0</TargetFramework>
     <AssemblyTitle>Ndjson.AsyncStreams.Net.Http</AssemblyTitle>
