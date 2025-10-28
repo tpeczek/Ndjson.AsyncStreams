@@ -37,7 +37,7 @@ namespace Ndjson.AsyncStreams.AspNetCore.Mvc
         public NdjsonAsyncEnumerableResult(IAsyncEnumerable<T> values, string mediaType)
         {
             _values = values ?? throw new ArgumentNullException(nameof(values));
-            _mediaType = _mediaType ?? throw new ArgumentNullException(nameof(mediaType));
+            _mediaType = mediaType ?? throw new ArgumentNullException(nameof(mediaType));
         }
 
         /// <summary>
